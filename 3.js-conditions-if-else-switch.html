@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var day = 'Sunday';
+       /*
+            conditiions
+
+            syntax:
+             if(condition) {
+
+             }else {
+
+             }
+       */ 
+
+       if(day == 'Monday') {
+            console.log('Hi I am ' + day);
+       }else {
+        console.log('Hi I am not Monday');
+       }
+
+
+       var a = 20;
+       var b = 15;
+       var t = a + b;
+
+       if(t > 40) {
+        console.log('Total greater than 40' );
+       }else {
+        console.log('Total less than 40' );
+       }
+
+       if(t > 10 && t<= 20){
+        console.log('Total values is between 20' );
+       }else {
+        console.log('Total values is not between 20' );
+       }
+
+       if(t <= 30 || t <= 40) {
+        console.log('Total values is between 30 or 40' );
+       }else {
+        console.log('Total values is moore than 40' );
+       }
+
+       // === Multiple if else condition
+
+       var x = 20;
+       var y = 25;
+
+       var z = x + y;
+
+       if(z > 10 && z <= 20) {
+        console.log('The value is between 10 to 20');
+       }else if(z > 21 && z <= 30) {
+        console.log('The value is between 21 to 30');
+       }else if(z > 31 && z <= 40) {
+        console.log('The value is between 31 to 40');
+       }else {
+        console.log('The value is more than 40');
+       }
+
+
+       var myDay = 'Sunday';
+       var hr = 14;
+
+       if(myDay === 'Monday') {
+        if(hr > 1) {
+            console.log('I am monday and the time is more than 1 hour')
+        }else {
+            console.log('I am monday and the time is less than 1 hour')
+        }
+       }else {
+            if(hr > 1) {
+                console.log('I am not monday and the time is more than 1 hour')
+            }else {
+                console.log('I am not monday and the time is less than 1 hour')
+            }
+       }
+
+       
+
+    </script>
+</body>
+</html>
