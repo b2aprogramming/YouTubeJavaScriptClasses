@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var month = 'February';
+
+        switch(month){
+            case 'January':
+            case 'April':
+                console.log('I am January or April');
+                break;
+            case 'February':
+                console.log('I am February');
+                break;
+            case 'March':
+                console.log('I am March');
+                break;
+            default: 
+                console.log('I am no  days');
+                break
+        }
+
+        var total = 320;
+        var isTotal = true;
+
+            switch(true) {
+                case total < 190 :
+                    console.log('Total value is less than '  + total)
+                    break;
+                case total >=190 && total <= 300:
+                    console.log('Total value is between 190 to 300')
+                    break;
+                case total >300 && total <= 400:
+                    console.log('Total value is between 301 to 400')
+                    break;
+                default: 
+                    console.log('Total value is ' + total)
+                    break;
+            }
+    </script>
+    
+</body>
+</html>
