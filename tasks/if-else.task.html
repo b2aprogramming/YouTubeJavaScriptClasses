@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Task:
+
+            1. Student Marks
+
+            var Telugu = 50;
+            var Hindi = 60;
+
+            Output:
+
+            Total = total value here example: 420;
+            Grade: A or B gRADE
+            Result: Pass fail
+        */
+
+        // ===== Students marks ====
+
+        var Telugu = 35;
+        var Hindi = 35;
+        var English = 35;
+        var Maths = 35;
+        var Science = 35;
+        var Social = 35;
+
+        var Total = Telugu + Hindi + English + Maths + Science + Social;
+
+        console.log('Total = ' + Total);
+
+        if(Telugu >=35 && Hindi >= 35 && English >= 35 && Maths >=35 && Science >= 35 && Social >= 35) {
+            if(Total <= 230) {
+                console.log('Grade = D')
+            }else if(Total > 230 && Total <=350) {
+                console.log('Grade = C')
+            }else if(Total > 350 && Total <=450) {
+                console.log('Grade = B')
+            }else if(Total > 450 && Total <=600) {
+                console.log('Grade = A')
+            }else {
+                console.log('Just Pass')
+            }
+        }else {
+            console.log('Result = Fail');
+        }
+
+
+
+    </script>
+</body>
+</html>
