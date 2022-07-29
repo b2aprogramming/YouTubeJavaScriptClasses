@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            === Functions types ==
+            1. Parameter Function
+            2. Return function
+            3. Arguments
+            4. Callback functions
+        */
+
+        // === 1 .Parameter ===
+
+        function totalVal() {
+            var a = 10;
+            var b = 20;
+            var total = a + b;
+            console.log(total);
+        }
+
+        function totalVal2() {
+            var a = 50;
+            var b = 30;
+            var total = a + b;
+            console.log(total);
+        }
+
+        totalVal();
+        totalVal2();
+
+        function getTotal(x, y) {
+            var a = x;
+            var b = y;
+            var total = a + b;
+            console.log(total);
+        }
+
+        getTotal(30, 80);
+        getTotal(50, 90);
+        getTotal(1, 6);
+        getTotal(7, 8);
+
+        function getSumVal(a, b, type) {
+            if(type === '+'){
+                console.log(a + b);
+            }else if(type === '-'){
+                console.log(a - b);
+            }else if(type === '*'){
+                console.log(a * b);
+            }else if(type === '/'){
+                console.log(a / b);
+            }else if(type === '%'){
+                console.log(a % b);
+            }else {
+                console.log('There is nothing operators');
+            }
+        }
+
+        console.log('==== values =====');
+        getSumVal(30, 20, '+');
+        getSumVal(10, 20, '-');
+        getSumVal(10, 20, '*');
+
+        // ===== Task ====
+        /*
+            function mySum(a, b) {
+                if "a" value is greater than "b" value then minutes it for a -b
+
+                if "b" value is greater than "a" value then minutes it for b - a
+            }
+        */
+
+
+        // === 2 Return functions ===
+
+        function val1() {
+            return 20;
+        }
+        function getT(a, b) {
+            var total =  a + b;
+            return total;
+            console.log('Hi reutn');
+        }
+
+        var ab = val1() + val1();
+        var t = getT(10, 30);
+
+        console.log('AB',ab);
+        console.log('T',t);
+
+        function getSumVal2(a, b, type) {
+            if(type === '+'){
+                return a + b;
+            }else if(type === '-'){
+                return a - b;
+            }else if(type === '*'){
+                return a * b;
+            }else if(type === '/'){
+                return a / b;
+            }else if(type === '%'){
+                return a % b;
+            }else {
+                return 'There is nothing operators'
+            }
+        }
+        console.log('=====>>>======>>>');
+        var myVal1 = getSumVal2(20, 30, '+'); 
+            console.log(myVal1);
+        var myVal2 = getSumVal2(20, 30, '-'); 
+            console.log(myVal2);
+
+        
+            // ====== Tasks ===
+
+            /*
+                ==== Task 1
+                function getTotalMarks(t, h) {
+
+                }
+                function getResult(total, te) {
+                    
+                }
+                // Output:
+                var total = getTotalMarks(60,80,90,70,60,90);
+                var result = getResult(60,80,90,70,60,90);
+                console.log(total);
+                console.log(result);
+            */
+
+
+            /*
+                ==== Task 2
+                function getTable() {
+
+                }
+
+                 // Output:
+                getTable(4, 10);
+
+                4 x 1 = 4;
+                4 x 2 = 8;
+                4 x 3 = 12;
+                4 x 4 = 16;
+                4 x 5 = 20;
+                4 x 6 = 24;
+                4 x 7 = 28;
+                4 x 8 = 32;
+                4 x 9 = 36;
+                4 x 10 = 40;
+
+                getTable(3, 20);
+                
+            */
+       
+
+
+
+    </script>
+</body>
+</html>

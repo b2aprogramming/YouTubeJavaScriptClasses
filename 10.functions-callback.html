@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // === Callback function ===
+
+        function getTotal(a, b, totalVal) {
+            var total = a + b;
+            totalVal(total, 'bhagath');
+        };
+
+        getTotal(10, 20, function(t, name) {
+            console.log(t);
+        });
+
+
+        for(var i=0; i<10; i++) {
+            console.log(i);
+        }
+
+        function loop(x, callBack) {
+            for(var i=0; i<x; i++) {
+                callBack(i);
+            }
+        }
+
+        loop(10, function(ind) {
+            console.log('IND',ind);
+        });
+
+        loop(20, function(ind) {
+            console.log('IND',ind);
+        })
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ==== functions ===
+        // ==== Functions are 3 types ===
+        /*
+            1. Normal function
+            2. anonymous function or inline function
+            3. self execution function
+        */
+
+        /*
+        === 1. normal function
+            syntax:
+
+            function myFun() {
+                statement here
+            }
+        */
+        sum();
+        function sum() {
+           var a = 10;
+           var b = 20;
+           console.log(a + b);
+
+        //    for(var i=0; i<10; i++) {
+        //     console.log(i);
+        //    }
+        }
+
+        
+        console.log('hi completed function');
+
+
+        /*
+        === 2. anonymous function or inline function
+            syntax:
+
+            var myFun = function(){
+
+            }
+            myFun()
+        */
+       
+        var mySum = function(){
+            console.log('Hi anonymus functiuons');
+        };
+
+        mySum();
+
+        /*
+        === 3. self execution function
+            syntax:
+
+            (function(){
+
+            })()
+        */
+
+        (function(){ 
+            console.log('Hi self esecution');
+        })();
+
+    </script>
+</body>
+</html>
