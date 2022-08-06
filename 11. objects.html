@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // ===== Types of objects 3 =====
+        /*
+                1. Object notation
+                    syntax:
+                    var obj = {
+                       
+                    }
+                2. Objects
+                   syntax: 
+                   var obj = new Object();
+                
+                3. Constructor Object
+                   syntax:
+
+                   function MyFun(){
+
+                   }
+
+                   var myfu = new MyFun();
+            */
+
+            /*
+            
+                1. Object notation
+                    syntax:
+                    var obj = {
+                       
+                    }
+            */
+
+            var myname = 'Bhagath';
+
+            var sum = function() {
+
+            }
+            sum();
+
+            var obj = {
+                name: 'My Obj',
+                firstName: 'f name',
+                lastName: 'l name',
+                getName: function() {
+                    console.log('My Function');
+                },
+                details: {
+                    address: 'hyderabad',
+                    email: 'test@gmail.com',
+                    phone: '48576411',
+                    data: {
+                        data1: 'sagsad',
+                        data2: 'sadgdsag'
+                    }
+                }
+            };
+
+            console.log(obj);
+
+            console.log(obj.name);
+
+            obj.getName();
+
+            
+
+            console.log(obj["lastName"]);
+
+            console.log(obj.details.address);
+            console.log(obj.details.data.data1);
+            console.log(obj.details.data);
+
+            console.log(obj['details']['address']);
+            console.log(obj['details']['data']['data1']);
+            console.log(obj['details']['data']);
+
+            var dls = 'details';
+
+            console.log(obj[dls]);
+
+            obj['getName']();
+
+            
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Vehicle(name, model, price) {
+            this.name = name;
+            this.model = model;
+            this.price = price;
+
+            // this.getName = function() {
+            //     return this.name;
+            // };
+            // this.getModel = function() {
+            //     return this.getModel;
+            // };
+            // this.getPrice = function() {
+            //     return this.price;
+            // };
+        };
+
+        Vehicle.prototype.getName = function() {
+            console.log(this);
+        };
+        Vehicle.prototype.getModel = function() {
+            console.log(this);
+        };
+        Vehicle.prototype.getPrice = function() {
+            console.log(this);
+        };
+
+        var v1 = new Vehicle('Toyota', 'Etio 2019s', 100000);
+        var v2 = new Vehicle('BMW', 'BMW 2018', 2000000);
+        console.log(v1);
+        console.log(v2);
+        </script>
+</body>
+</html>

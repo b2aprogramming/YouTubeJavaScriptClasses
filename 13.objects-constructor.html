@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        function Vehicle() {
+            this.name = 'I am vehicle';
+            this.getName = function() {
+                return this.name;
+            }
+        }
+
+        var vehicle = new Vehicle();
+        var vehicle1 = new Vehicle();
+        // var vehicle2 = new Vehicle();
+        // var vehicle3 = new Vehicle();
+        // var vehicle4 = new Vehicle();
+
+        console.log('==1',vehicle);
+        console.log('==2',vehicle1);
+
+        vehicle.name = 'I am vehcile updated';
+
+        console.log(vehicle);
+        console.log('==2',vehicle1);
+
+       Vehicle()
+
+        var obj = {
+            name: 'this is Object',
+            getName: function() {
+                console.log(this);
+            }
+        };
+
+        console.log(obj);
+        // obj.getName();
+
+        console.log(this);
+       // Vehicle()
+    </script>
+</body>
+</html>
