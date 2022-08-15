@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="box"><span>soem text here</span></div>
+    <div id="box2">
+        <p>Some paragraph test here</p>
+        <h4>Title h4 tag</h4>
+        <div>Some div test</div>
+    </div>
+    
+    <script>
+        // DOM : Document Object Model
+        var box = document.getElementById('box');
+        console.log(box);
+        console.dir(box);
+        console.log(box.innerHTML);
+        box.style.backgroundColor = 'green';
+        box.style.height = '200px';
+        box.style.width = '300px';
+
+        var box2 = document.getElementById('box2');
+        console.dir(box2)
+        box2.children[0].style.color="blue";
+        box2.children[1].style.color="red";
+        box2.children[2].style.color="green";
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #openBtn {
+            display: inline-block;
+            background-color: #ccc;
+            padding: 4px 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        #menu {
+            width: 400px;
+            height: 400px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <span id="openBtn">Open</span>
+    <div id="menu">
+        some content here
+    </div>
+    <script>
+        var btn = document.getElementById('openBtn');
+        var menu = document.getElementById('menu');
+
+        console.dir(btn);
+        var isOpen = false;
+        btn.onclick = function() {
+           
+          isOpen = !isOpen;
+          if(isOpen == true) {
+            menu.style.display = 'block';
+          }else {
+            menu.style.display = 'none';
+          }
+          
+         console.log('hi', isOpen);  
+        }
+    </script>
+</body>
+</html>
