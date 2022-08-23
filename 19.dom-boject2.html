@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+        .block-1 {
+            width: 300px;
+            background-color: #ccc;
+            padding: 10px;
+            border: 10px solid #000;
+            height: 200px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="block-1">
+        some test here some test here  some test here some test here some test here  some test here  some test here some test here  some test here  some test here some test here  some test here  some test here some test here  some test here  some test here some test here  some test here  some test here some test here  some test here  some test here some test here  some test here  some test here some test here  some test here  some test here some test here  some test here  some test here some test here  some test here  some test here some test here  some test here  some test here some test here  some test here  some test here some test here  some test here  some test here some test here  some test here  some test here some test here  some test here  some test here some test here  some test here  some test here some test here  some test here  some test here some test here  some test here  some test here some test here  some test here  some test here some test here  some test here  some test here some test here  some test here 
+    </div>
+
+    <div>
+        <div id="t">
+            Telugu: <span></span>
+        </div>
+        <div id="t">
+            Englishy: <span></span>
+        </div>
+    </div>
+    <script>
+
+        var block1 = document.querySelector('.block-1');
+        console.dir(block1)
+        var eleH = block1.clientHeight;
+        var eleW = block1.clientWidth;
+
+        console.log(eleH, eleW)
+
+        var t = document.querySelector('#t');
+        var _T = 30;
+        t.children[0].innerHTML = _T;
+        console.dir(t)
+       // t.innerHTML = _T;
+    </script>
+</body>
+</html>

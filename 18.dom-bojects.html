@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ul li:nth-child(3){
+            background-color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="block-id-1">
+        <h1>Block - id -1</h1>
+    </div>
+    <div class="block-1">
+        <h1>Block - 1</h1>
+    </div>
+    <div class="block-1">
+        <h1>Block - 2</h1>
+    </div>
+    <div class="block-1">
+        <h1>Block - 3</h1>
+    </div>
+    <div class="block-4">
+        <h1>Block - 1</h1>
+    </div>
+    <h1 title="Hello h1 "></h1>
+    <h1 title="Hello1 h1 "></h1>
+    <h1 title="Hello2 h1 "></h1>
+
+    <ul>
+        <li>Siome test here 1</li>
+        <li>Siome test here 2</li>
+        <li>Siome test here 3</li>
+        <li>Siome test here 4</li>
+    </ul>
+
+    <script>
+
+      //  var block1 = document.getElementsByClassName('block-1');
+    // var block1 = document.getElementsByTagName('div');
+     var block1 = document.querySelectorAll('.block-1, .block-4, #block-id-1, h1');
+        console.log(block1);
+
+    var ulLi = document.querySelector('ul li:nth-child(3)');
+    console.log(ulLi);
+    var h1 = document.querySelectorAll('[title="Hello1 h1"]');
+    console.log(h1);
+    </script>
+</body>
+</html>
