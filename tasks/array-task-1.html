@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+         /*
+            var myArr = [45, 2, 8, "Banana", "Orange", true, false];
+
+            var obj = {
+                total: 55,
+                text: "Banana, Orange",
+                booleanVal: [true, false]
+            };
+
+            console.log(obj)
+        */
+        var myArr = [45, 2, 8, "Banana", "Orange", true, false];
+        var obj = {
+                total: 0,
+                text: '',
+                booleanVal: []
+        };
+
+        var strCount = 0;
+
+        for(let i = 0; i<myArr.length; i++) {
+                if(typeof myArr[i] === 'number') {
+                    obj.total += myArr[i];
+                }
+
+                if(typeof myArr[i] === 'string') {
+                    if(strCount === 0){
+                        obj.text +=  myArr[i] ;  
+                    }else {
+                        obj.text +=  ', ' + myArr[i] ;
+                    }
+                    
+                    strCount++;
+                }
+
+
+                if(typeof myArr[i] === 'boolean') {
+                    obj.booleanVal[obj.booleanVal.length] = myArr[i];
+                }
+        }
+        
+console.log(strCount);
+        console.log(obj);
+
+
+    </script>
+</body>
+</html>

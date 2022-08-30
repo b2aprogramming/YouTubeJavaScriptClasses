@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // === concat ===
+        var arr1 = [1,2,3];
+        var arr2 = [4,5,6];
+        var arr3 = [7,8,9];
+
+        var myArr = [].concat(arr1, arr2, arr3, 10);
+        console.log(arr1);
+        console.log(arr2);
+        console.log(arr3);
+        console.log(myArr);
+
+        // === forEach ===
+
+        var fruites = ["Banana", "Orange", "Mango", "Grapes"];
+
+        for(let i = 0; i<fruites.length; i++) {
+            console.log(i, fruites[i])
+        }
+
+        fruites.forEach(function(ele, ind, ar) {
+            console.log(ind, ele, ar)
+        });
+
+
+        function myEach(arrData, callBack) {
+            for(let i = 0; i<arrData.length; i++) {
+                callBack(arrData[i], i,  arrData);
+            }
+        }
+        myEach(fruites, function(ele, ind, ar) {
+            console.log('CUJSTOM ARRAY==',ind, ele, ar)
+        });
+
+
+
+    </script>
+</body>
+</html>
