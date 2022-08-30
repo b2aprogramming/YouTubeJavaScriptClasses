@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <input type="number" id="txtInput">
+    </div>
+    <button id="addData">
+
+        add da
+    </button>
+    <ul id="lists"></ul>
+    <script>
+        var arr = [12,5,7,9,8,4,75,7];
+       // arr[arr.length] = 20;
+    //    arr.push(30);
+    //    arr.push(40);
+        console.log(arr)
+        // ====
+
+        var btn = document.querySelector('#addData');
+        btn.onclick = function() {
+            var txtInput = document.querySelector('#txtInput');
+            var ul = document.querySelector('#lists');
+            let val = +txtInput.value;
+
+            arr.push(val);
+
+            txtInput.value = '';
+            console.log(arr);
+           // ul.innerHTML = '';
+            ul.innerHTML += '<li>' + val + '</li>';
+            //bindData(arr);
+        };
+
+        function bindData(arr) {
+            var ul = document.querySelector('#lists');
+            for(let i =0; i<arr.length; i++) {
+                ul.innerHTML += '<li>' + arr[i] + '</li>';
+            }
+            console.dir(ul)
+        }
+
+        
+        
+
+        // === unshift ===
+
+        arr.unshift(250);
+        
+
+        // ==== pop ====
+
+        // arr.pop();
+        // arr.pop();
+        
+        
+
+         // ==== shift ====
+         arr.shift()
+        bindData(arr);
+        console.log(arr)
+
+        
+
+
+
+
+
+
+    </script>
+</body>
+</html>
