@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var arr = [4,5,8,7,9,7,4,6,5];
+
+        // === slice ===
+        var arr1 = arr.slice(3, 5);
+        var arr2 = arr.slice(6);
+        var arr3 = arr.slice(-4, -2);
+
+        console.log('Start and End index values ==> ',arr1);
+        console.log('only Start index to rest all the elements==',arr2);
+        console.log('negative val',arr3);
+        console.log(arr);
+
+        // ==== splice ====
+
+        var arrs = [4,5,8,7,9,7,4,6,5];
+        var arrs2 = [4,5,8,7,9,7,4,6,5];
+
+        var dArr1 = arrs.splice(5, 2);
+
+        console.log('DELL ELE ==> ',dArr1);
+        console.log('DELL',arrs);
+
+        arrs2.splice(2, 0, 100, 200, 400);
+        console.log('ADD',arrs2);
+
+       var arrsD =  arrs2.splice(-2, 0, 500);
+
+       console.log(arrsD);
+       console.log(arrs2);
+
+
+    
+       // ==== indexOf ===
+
+       var indOf = [5,9,7,4,6,9,2,4,8,9, 5];
+
+      let ind =  indOf.indexOf(5);
+      
+
+      console.log(ind);
+
+
+      if(ind > -1) {
+        console.log('Hi I am here');
+      }else {
+        console.log('There is no value');
+      }
+
+      var str = ["Name 1", "Name 2", "Name 3"];
+
+      let ind1 = str.indexOf("Name 3");
+
+      console.log(ind1);
+
+      var objArr = [
+        {name: 'Name 1', id: 1},
+        {name: 'Name 2', id: 2},
+        {name: 'Name 3', id: 3},
+        {name: 'Name 4', id: 4},
+      ];
+
+      var ind3 = objArr.indexOf(objArr[1]);
+      console.log(objArr);
+      console.log(ind3);
+
+
+      var obj1 = {
+        name: 'Bhagath',
+        id: 1
+      };
+
+      var obj2 = {
+        name: 'Bhagath',
+        id: 1
+      };
+
+    // var obj2 = obj1;
+     var obj3 = obj1;
+
+    obj3.name = 'Singh  Bhagath';
+
+
+      console.log(obj1);
+      console.log(obj2);
+      console.log(obj3);
+
+      console.log(obj1 == obj2);
+
+
+      var myArr = objArr;
+
+
+      myArr.push({name: 'Name 5', id: 5});
+
+      console.log(objArr);
+      console.log(myArr);
+
+
+      var lArr = [5,8,9,7,4,2,9,3,6];
+
+      var lInd = lArr.lastIndexOf(9);
+
+      console.log(lInd);
+
+
+      // ==== findIndex ===
+      var objArr2 = [
+        {name: 'Find 1', id: 1},
+        {name: 'Find 2', id: 2},
+        {name: 'Find 3', id: 3},
+        {name: 'Find 4', id: 4},
+      ];
+
+      var objInd = objArr2.findIndex(function(ele) {
+        console.log(ele);
+        // if(ele.id === 8) {
+        //     return true
+        // }else {
+        //     return false;
+        // }
+       return ele.id === 3;
+      });
+
+      console.log(objInd);
+
+      // == join ===
+
+      var myName = ["Bhagath", "Singh", "Name"];
+
+      let n = myName.join('');
+
+      console.log(n);
+
+      // ==== Task ===
+
+      /*
+            var name = ["B","h","a","g","t", "h"];
+
+            Output: htgahB;
+            
+      */
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
