@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt">
+    <ul id="list">
+
+    </ul>
+    
+    <script>
+        // === find ====
+        var arr = [45,78,9,7,5,7,8];
+
+       var val =  arr.find(function(ele, ind, ar) {
+        console.log(ele);
+        return ele > 25;
+       });
+       console.log('@@@ Val==> ', val);
+
+       var objArr2 = [
+        {name: 'Find 1', id: 1},
+        {name: 'Find 2', id: 2},
+        {name: 'Find 3', id: 3},
+        {name: 'Find 4', id: 4},
+      ];
+
+      var val2 =  objArr2.find(function(ele, ind, ar) {
+        console.log(ele);
+        return ele.name === 'Find 5';
+       });
+       console.log('@@@ Val 2==> ', val2);
+
+       // == filter ====
+
+       var objArr3 = [
+        {name: 'Ui Developer', id: 11},
+        {name: 'Ui Developer', id: 12},
+        {name: 'Java dev', id: 32},
+        {name: 'Backend', id: 43},
+      ];
+
+      var arr2 = objArr3.filter(function(ele, ind, ar) {
+        console.log(ele);
+        return ele.name === 'Ui Developer';
+      });
+
+      arr2[0].name = 'Bhagath';
+      arr2[0].lname = "Singh";
+
+      console.log('@@@ Val 3==> ', arr2);
+      console.log('@@@ Val 3==> ', objArr3);
+
+
+      var objArr4 = [
+        {name: 'Ui Developer', id: 11},
+        {name: 'Ui Developer', id: 12},
+        {name: 'Java dev', id: 32},
+        {name: 'Backend', id: 43},
+        {name: 'DotNET dev', id: 43},
+        {name: 'Cloud', id: 43},
+      ];
+
+      const inputEle = document.querySelector('#txt');
+
+      function buildList(arrData) {
+        const ul = document.querySelector('#list');
+        ul.innerHTML = '';
+        arrData.forEach(function(ele) {
+            ul.innerHTML += '<li>' + ele.name + '</li>'
+        });
+        console.log('THIS==>', this);
+      }
+
+      buildList(objArr4);
+
+      console.dir(inputEle);
+
+      const obj2 = {
+        name: 'sagsag',
+        getName: function() {
+           this 
+        }
+      }
+      
+
+      inputEle.onkeyup = function() {
+        //console.dir(this.value);
+        let inputVal  = this.value === '' || this.value === undefined;
+        
+        let filteredArr = objArr4.filter(function(ele, ind, ar) {
+            //console.log(this);
+            if(inputVal === '' || inputVal === undefined) {
+                return true;
+            }
+            return ele.name === inputVal;
+        });
+
+        buildList(filteredArr);
+      }
+
+      var str = new String('Bhagath');
+      var str1 = 'Bhagath';
+
+      var str2 = str1.toLowerCase();
+
+      console.log(str1.toLowerCase().indexOf('ath'));
+      console.log(str1);
+      console.log(str2);
+      console.dir(str);
+
+      var val2 = 0;
+      if(val2) {
+        console.log('Hi VaAL2');
+      }else {
+        console.log('No Hi VaAL2');
+      }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
