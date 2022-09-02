@@ -11,6 +11,13 @@
     <ul id="list">
 
     </ul>
+
+    <div>
+      <input type="text" id="txt">
+      <ul id="list">
+
+      </ul>
+    </div>
     
     <script>
         // === find ====
@@ -90,14 +97,14 @@
 
       inputEle.onkeyup = function() {
         //console.dir(this.value);
-        let inputVal  = this.value === '' || this.value === undefined;
+        let inputVal  = this.value || '';
         
         let filteredArr = objArr4.filter(function(ele, ind, ar) {
             //console.log(this);
-            if(inputVal === '' || inputVal === undefined) {
+            if(!inputVal) {
                 return true;
             }
-            return ele.name === inputVal;
+            return ele.name.toLowerCase().indexOf(inputVal.toLowerCase()) > -1 ;
         });
 
         buildList(filteredArr);
@@ -109,20 +116,52 @@
       var str2 = str1.toLowerCase();
 
       console.log(str1.toLowerCase().indexOf('ath'));
-      console.log(str1);
-      console.log(str2);
+      console.log('ORIGINAL==', str1);
+      console.log('LOWER CASE==',str2);
       console.dir(str);
 
-      var val2 = 0;
+      var val2 = 0; // 0, '', null, undefined
+      
       if(val2) {
         console.log('Hi VaAL2');
       }else {
         console.log('No Hi VaAL2');
       }
 
+      var abc = 9;
+      //var result = '';
+
+      // if(abc > 10) {
+      //   result = 'Hello';
+      // }else {
+      //   result = 'Hi';
+      // }
+     
+
+      // == short had condition ==
+
+      var result = abc > 10 ? 'Hello' : 'Hi';
+      
+      var res = 0;
+      var ab2 = null;
+      var ab3  = 'Bhagath';
+
+      var myVal1 = res || ab2 || ab3 || 20;
+
+      
 
 
+      console.log(result);
 
+      console.log(myVal1);
+
+      var v1 = '';
+
+      if(!v1){
+        console.log('HI V1');
+      }else {
+        console.log('No V1');
+      }
 
 
 
