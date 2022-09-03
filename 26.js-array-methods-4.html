@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // === map ====
+        var arr = [4,6,8,2,3,1,9,7,8];
+
+        var mappedArr = arr.map((ele, ind, ar) => {
+            return {
+                name: 'Name ' + ele,
+                id: ele
+            }
+        });
+
+        var arr2 = [
+            {name: 'Name 1', id: 1},
+            {name: 'Name 2', id: 2},
+            {name: 'Name 3', id: 3},
+        ];
+
+
+        console.log(mappedArr);
+        console.log(arr);
+
+        var mappedArr2 = arr2.map(function(ele, ind, ar) {
+            return ele.id;
+        });
+
+        console.log(mappedArr2);
+        console.log(arr2);
+
+        // ==== reduce ===
+
+        var arr3 = [5,9,7,5,3,9,4,50];
+
+        const res = arr3.reduce(function(x, ele, ind, ar) {
+           // x = x + ele;
+           //console.log('@@@ RES', x)
+            return x += ele;
+        }, 0);
+
+        console.log('@@@ RES', arr3)
+        console.log('@@@ RES', res);
+
+        var ar4 = [[1,2,3], [4,5,6], [7,8,9]];
+
+        var res2 = ar4.reduce(function(x, ele) {
+            return x.concat(ele);
+        }, []);
+
+        console.log('@@@ RES 2', res2);
+
+        // == isArray ===
+
+        var myArr2 = [4,5,7];
+
+        console.log('@@@ TYPE',typeof myArr2);
+        console.log('@@@ TYPE',Array.isArray(myArr2));
+
+        // === Task ===
+
+        var myArr = [4,3,8,"Banana", "Orange", 45, true, [1,2,3], [4,5,6]]
+
+        /*
+            Output:
+            {
+                total: 60,
+                text: "Banana, Orange",
+                bool: [true],
+                arrVal: [1,2,3,4,5,6]
+            }
+        */
+
+
+    </script>
+</body>
+</html>

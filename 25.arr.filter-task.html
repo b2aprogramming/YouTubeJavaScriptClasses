@@ -11,19 +11,76 @@
             padding: 10px;
             width: 300px;
         }
+        .error {
+            color: red;
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div>
-       <div style="margin-bottom: 10px;"><input type="text" id="txt"> <button>Add</button></div> 
-       <div><input type="text" id="txt2"></div> 
+       <div style="margin-bottom: 10px;">
+        <input type="text" id="txt"> 
+        <button id="addBtn">Add</button>
+        <div class="error">Duplicate values are not allowed</div>
+    </div> 
+       <div>
+        <input type="text" id="txt2">
+    </div> 
         <ul id="list">
-            <li>asgsagsadgas</li>
-            <li>asgsagsadgas</li>
-            <li>asgsagsadgas</li>
-            <li>asgsagsadgas</li>
-            <li>asgsagsadgas</li>
+            
         </ul>
       </div>
+
+      <script>
+        var addBtn = document.querySelector('#addBtn');
+        var txt = document.querySelector('#txt');
+        var txt2 = document.querySelector('#txt2');
+        var list = document.querySelector('#list');
+        var error = document.querySelector('.error');
+
+        var dataList = [];
+
+        function addRecord() {
+            let val = txt.value || '';
+            let valInd = dataList.findIndex(function(ele) {
+                return ele.toLowerCase() === val.toLowerCase();
+            });
+
+            if(valInd > -1) {
+                error.style.display = 'block';
+               return; 
+            };
+            // if(dataList.indexOf(val) > -1) {
+            //     error.style.display = 'block';
+            //    return; 
+            // };
+
+            error.style.display = 'none';
+
+            dataList.push(txt.value);
+            
+            list.innerHTML +='<li>' +  txt.value + '</li>';
+            txt.value = '';
+            console.log(dataList);
+        }
+
+        addBtn.onclick = addRecord;
+
+        function filterData () {
+            list.innerHTML = '';
+            let filterVal = txt2.value || '';
+            let filteredData = dataList.filter(function(ele, ind, ar) {
+                return ele.toLowerCase().indexOf(filterVal.toLowerCase()) > -1
+            });
+
+            filteredData.forEach(function(ele) {
+                list.innerHTML +='<li>' +  ele + '</li>';
+            });
+        }
+
+        txt2.onkeyup = filterData;
+        
+      </script>
 </body>
 </html>
