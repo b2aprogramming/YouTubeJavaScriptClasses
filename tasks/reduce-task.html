@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      
+
+      var myArr = [4,3,8,"Banana", "Orange", 45, true, [1,2,3], [4,5,6]];
+
+    /*
+        Output:
+        {
+            total: 60,
+            text: "Banana, Orange",
+            bool: [true],
+            arrVal: [1,2,3,4,5,6]
+        }
+    */
+
+    const res = myArr.reduce(function(x, ele) {
+        if(typeof ele === 'number') {
+            x.total += ele;
+        }else if(typeof ele === 'string') {
+            x.text += x.isString ? ',' + ele : ele;
+            x.isString = true;
+        }else if(typeof ele === 'boolean') {
+            x.bool.push(ele)
+        }else if(typeof ele === 'object' && Array.isArray(ele)) {
+            //x.arrVal = x.arrVal.concat(ele)
+            x.arrVal = x.arrVal.concat(ele);
+        }
+        return x;
+    }, {
+        total: 0,
+        text: '',
+        bool: [],
+        arrVal: [],
+        isString: false
+    });
+
+    console.log(res)
+
+
+    </script>
+</body>
+</html>

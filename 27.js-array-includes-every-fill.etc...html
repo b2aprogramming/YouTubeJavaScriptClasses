@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // ===== includes ====
+        var arr = [4,6,8,2,3,1,9,7,8, "Text asg sag  sag sag"];
+
+        var isVal = arr.includes('Text asg sag  sag sag');
+
+        console.log(isVal);
+
+        // ====== every ===
+        var arr2 = [10,20.30, 9];
+        var isVal2 = arr2.every(function(ele, ind, ar) {
+           return ele > 9;
+        });
+
+        console.log(isVal2);
+
+        // ====== fill ===
+        var arr3 = [2,8,9, 10];
+        arr3.fill(12);
+
+        console.log(arr3);
+
+        var arr4 = new Array(5);
+        arr4.fill(6)
+        console.log(arr4);
+
+        var arr5 = [2,8,9, 10];
+        var aRes = arr5.entries();
+        var aRes1 = arr5.keys();
+        console.log(aRes)
+        // ==== reverse ====
+
+        var arr6 = [2,8,9, 10];
+
+        console.log(arr6.reverse())
+        console.log(arr6);
+
+        // ====  reverse Task ====
+
+        /*
+            var str = ["H", "e","l", "l","o"];
+            Output: olleH;
+        */
+
+        // ===== some ====
+        var arr7 = [2,8,9, 10];
+        function mySum(ele, ind, ar) {
+            console.log(ele);
+              return ele >7;
+        }
+        
+       var isVal5 =  arr7.some(mySum);
+        // arr7.some(function(ele, ind ,ar) {
+
+        // });
+
+        console.log(isVal5);
+        // === toString() ===
+        var str1 = ["Banana", "Orange", "Mango"];
+        console.log(str1.toString());
+        console.log(str1.join('=='));
+
+    </script>
+</body>
+</html>
