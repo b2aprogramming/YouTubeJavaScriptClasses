@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="sortDataOne">Sort Asc/Dsc</button>
+    <button id="sortData">Sort Asc</button>
+    <button id="sortData2">Sort Desc</button>
+    <ul id="list-data">
+
+    </ul>
+
+    <script>
+
+        /*
+            var str = ["H", "e","l", "l","o"];
+            Output: olleH;
+        */
+        var str = ["H", "e","l", "l","o"];
+            str.reverse();
+        var txt = str.join('');
+            console.log(txt);
+
+        // === sort ====
+
+       // var listData = [8,2,4,6,9,7,5,1,6,9,7,4,8,5,9];
+        var listData = ["Banana", "Orange", "Mango", "Pineapple", "Seeds"];
+
+
+        //console.log(listData)
+        console.log(listData)
+
+        var list = document.querySelector('#list-data');
+        var btn = document.querySelector('#sortData');
+        var btn2 = document.querySelector('#sortData2');
+        var btnOne = document.querySelector('#sortDataOne');
+
+        function renderList(arr) {
+            list.innerHTML = '';
+            arr.forEach(function(ele){
+                list.innerHTML += '<li>' + ele +  '</li>';
+            });
+        };
+
+        renderList(listData);
+
+        function sortData(sortType) {
+            listData.sort(function(a, b) {
+                if(a > b) {
+                    return sortType === 'asc' ? 1 :  -1;
+                }else  if(a < b) {
+                    return sortType === 'asc' ? -1 :  1;
+                }else {
+                    return 0
+                }
+            });
+        }
+
+        btn.onclick = function() {
+            sortData('asc');
+
+            renderList(listData);
+        }
+
+        btn2.onclick = function() {
+            sortData('dsc');
+
+            renderList(listData);
+        };
+
+        var isAscDsc = 'dsc';
+        btnOne.onclick = function() {
+            if(isAscDsc === 'asc') {
+                isAscDsc = 'dsc'
+            }else {
+                isAscDsc = 'asc' ;
+            }
+            sortData(isAscDsc);
+
+            renderList(listData);
+        };
+
+        // === Task ===
+        
+        /*
+            var arr2 = [
+                {name: 'Name 2', id: 2},
+                {name: 'Name 1', id: 1},
+                {name: 'Name 3', id: 3},
+            ];
+
+            output asc: based on name property 
+
+            [
+                {name: 'Name 1', id: 1},
+                {name: 'Name 2', id: 2},
+                {name: 'Name 3', id: 3},
+            ]
+
+            output dsc: based on name property 
+
+            [
+                {name: 'Name 3', id: 3},
+                {name: 'Name 2', id: 2},
+                {name: 'Name 1', id: 1},
+            ]
+
+            sortData(arr2, 'name', 'asc');
+            sortData(arr2, 'name', 'dsc');
+
+        */
+
+
+        
+
+
+    </script>
+</body>
+</html>
