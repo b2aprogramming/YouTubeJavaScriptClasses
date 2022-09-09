@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btn">Sort asc/dsc</button>
+    <ul id="lists">
+        
+    </ul>
+
+    <script>
+
+        var btn = document.querySelector('#btn');
+        var lists = document.querySelector('#lists');
+
+         var arr2 = [
+            {name: 'Name 2', id: 2},
+            {name: 'Name 1', id: 1},
+            {name: 'Name 3', id: 3},
+            {name: 'name 7', id: 7},
+            {name: 'Name 5', id: 5},
+            {name: 'Name 4', id: 4},
+            {name: 'Name 6', id: 6},
+        ];
+
+        function bindList( arr ) {
+            lists.innerHTML = '';
+            arr.forEach(function(ele) {
+                lists.innerHTML += '<li>' + ele.name + '</li>'
+            })
+        }
+
+        bindList(arr2);
+
+        console.log(arr2);
+        function sortData(arr, prop, type) {
+            arr.sort(function(a, b) {
+                // console.log('a==>', a);
+                // console.log('b==>', b);
+
+                if(a[prop] > b[prop]) {
+                    return type === 'asc' ? 1 :  -1;
+                }else  if(a[prop] < b[prop]) {
+                    return type === 'asc' ? -1 :  1;
+                }else {
+                    return 0
+                }
+            });
+
+            bindList(arr);
+        }
+
+        var isAscDsc = 'dsc';
+        btn.onclick = function() {
+            if(isAscDsc === 'asc') {
+                isAscDsc = 'dsc'
+            }else {
+                isAscDsc = 'asc' ;
+            }
+            sortData(arr2, 'name',isAscDsc);
+        }
+
+        var obj =  {
+            name: 'Name 2', 
+            id: 2
+        };
+
+        console.log(obj.name);
+        console.log(obj['name']);
+
+        var nme = 'name';
+
+        console.log(obj[nme]);
+
+    </script>
+    
+</body>
+</html>
