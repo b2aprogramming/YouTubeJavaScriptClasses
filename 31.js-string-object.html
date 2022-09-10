@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var str = 'My Name';
+        var str1 = new String('My Name');
+
+        let name1 = str.toLowerCase();
+        console.log(str);
+        console.log(name1);
+        console.log(str1);
+
+        var ind = str.indexOf('am');
+        console.log(ind);
+
+        var isVal = str.includes('Am');
+        console.log(isVal);
+
+        var strN1 = 'Hello world I am here';
+
+        var res1 = strN1.slice(-6, -2);
+        console.log(strN1);
+        console.log(res1);
+
+        // === task ====
+
+        /*
+            var urls = [
+                'https://www.test.com/images/profile.jpg',
+                'https://www.test.com/images/profile2.png',
+                'https://www.test.com/images/profile3.gif',
+            ];
+
+
+            Output: 
+
+           var images =  getImagesNames(urls)
+
+            [
+                'profile.jpg',
+                'profile2.png',
+                'profile3.gif',
+            ]
+
+        */
+
+        var splt = 'Bhagath-Singh-hI';
+
+        var ar1 = splt.split('-');
+
+        console.log(ar1);
+        // === TASK 2 ===
+        /*
+            var url = 'https://www.test.com/api/product?name=notebook&id=2&category=book',
+
+            output: 
+            {
+                name: 'notebook',
+                id: 2,
+                category: 'book'
+            }
+            
+        */
+
+
+    </script>
+</body>
+</html>

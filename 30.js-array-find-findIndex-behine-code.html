@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        Array.prototype.findVal  = function(callBack) {
+            for(let i = 0; i< this.length; i++) {
+               //let isVal =  callBack(this[i], i, this);
+               if(callBack(this[i], i, this)) {
+                   return this[i];
+               }
+            }
+        };
+
+        Array.prototype.findValIndex  = function(callBack) {
+            for(let i = 0; i< this.length; i++) {
+               //let isVal =  callBack(this[i], i, this);
+               if(callBack(this[i], i, this)) {
+                   return i;
+               }
+            }
+            return -1;
+        };
+
+        var arr = [4,5,7,81,96,35,8,101];
+
+        var val = arr.find(function(ele, ind, ar) {
+            console.log(ind, 'ELE ==> ', ele);
+            return ele === 5;
+        });
+        console.log('VAL -1', val);
+        console.log('===================');
+        var val2 = arr.findVal(function(ele, ind, ar) {
+            console.log(ind, 'ELE ==> ', ele);
+            return ele === 5;
+        });
+
+        console.log('VAL -2', val2);
+
+        var val3 = arr.findIndex(function(ele, ind, ar) {
+            console.log(ind, 'ELE ==> ', ele);
+            return ele === 105;
+        });
+
+        console.log('VAL - 3: ', val3);
+
+        var val4 = arr.findValIndex(function(ele, ind, ar) {
+            console.log(ind, 'ELE ==> ', ele);
+            return ele === 105;
+        });
+
+        console.log('VAL - 4: ', val4);
+
+
+        // === task === 
+        /*
+            Write the behind code for indexOf, lastIndexOf, filter 
+        */
+
+        
+
+    </script>
+</body>
+</html>
