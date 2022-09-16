@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        Array.prototype.myIndexOf = function(val) {
+            for(let i = 0; i < this.length; i++) {
+                if(val === this[i]) {
+                    return i;
+                }
+            }
+            return -1;
+        };
+
+        Array.prototype.myLastIndexOf = function(val) {
+            for(let i = this.length; i <= 0; i--) {
+                if(val === this[ind]) {
+                    return i;
+                }
+            }
+            return -1;
+        };
+
+        
+
+
+
+
+
+        var arr = [5,9,"3",7,4,3,6];
+        // == indexOf ===
+        var ind = arr.indexOf("3");
+        console.log(ind);
+        var ind2 = arr.myIndexOf("3");
+        console.log(ind2);
+
+        var objArr = [
+            {name: 'Name 1', id: 1},
+            {name: 'Name 2', id: 2},
+            {name: 'Name 3', id: 3},
+            {name: 'Name 4', id: 4},
+        ];
+
+        var ind3 = objArr.indexOf(objArr[0]);
+        var ind4 = objArr.myIndexOf(objArr[0]);
+
+        var lind1 = arr.lastIndexOf(88);
+
+        console.log(ind3);
+        console.log(ind4);
+        console.log(lind1);
+
+        // === fitler ===
+
+        Array.prototype.myFilter = function(callBack) {
+            const filteredArr = [];
+            for(let i = 0; i < this.length; i++) {
+                let isVal = callBack(this[i], i, this);
+                if(isVal) {
+                   // filteredArr.push(this[i])
+                    filteredArr[filteredArr.length] = this[i];
+                }
+            }
+            return filteredArr;
+        };
+        
+
+        var filterArr = [8,9,7,4,5,6,2,3];
+        var ff = filterArr.filter(function(ele, ind, ar) {
+            return ele >= 6
+        });
+
+        console.log(ff);
+        var ff2 = filterArr.myFilter(function(ele, ind, ar) {
+            return ele >= 6
+        });
+
+        console.log(ff2);
+
+    </script>
+</body>
+</html>

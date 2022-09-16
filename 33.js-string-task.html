@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+         // === task ====
+
+        /*
+            var urls = [
+                'https://www.test.com/images/profile.jpg',
+                'https://www.test.com/images/profile2.png',
+                'https://www.test.com/images/profile3.gif',
+            ];
+
+
+            Output: 
+
+           var images =  getImagesNames(urls)
+
+            [
+                'profile.jpg',
+                'profile2.png',
+                'profile3.gif',
+            ]
+
+        */
+
+        var urls = [
+                'https://www.test.com/images/profile.jpg',
+                'https://www.test.com/images/profile2.png',
+                'https://www.test.com/images/profile3.gif',
+            ];
+
+            function getImagesNames(arr) {
+                return arr.map(function(ele) {
+                    let ind = ele.lastIndexOf('/');
+                    return ele.slice(ind + 1);
+                });
+            }
+            var images =  getImagesNames(urls);
+
+            console.log(images)
+        
+            // === TASK 2 ===
+        /*
+            var url = 'https://www.test.com/api/product?name=notebook&id=2&category=book',
+
+            output: 
+            {
+                name: 'notebook',
+                id: 2,
+                category: 'book'
+            }
+            
+        */
+
+        var url = 'https://www.test.com/api/product?name=notebook&id=2&category=book';
+
+        var urlData = url.split('?');
+        var urlStrData = urlData[1].split('&')
+        console.log(urlData);
+        console.log(urlStrData);
+
+        var obj = urlStrData.reduce(function(x, ele) {
+            var strVal = ele.split('=');
+            x[strVal[0]] = strVal[1];
+            return x;
+        }, {});
+
+        console.log(obj);
+
+        // ==== Task ====
+
+        /*
+            Behind code for map, reduce, join, slice, shift, unshift, pop, reverse
+        */
+
+
+    </script>
+</body>
+</html>
