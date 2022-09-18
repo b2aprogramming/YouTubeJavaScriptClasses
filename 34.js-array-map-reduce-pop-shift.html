@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // === map behind code ===
+
+        Array.prototype.myMap = function(callBack) {
+            if(typeof callBack !== 'function') {
+               throw(callBack + ' is not a function');
+            }
+            let i = 0;
+            const mapArr = [];
+            while( i < this.length) {
+                let val = callBack(this[i], i,this);
+               // mapArr.push(val);
+                mapArr[mapArr.length] = val;
+                i++;
+            }
+            return mapArr;
+        }
+
+        var  arr = [4,8,5,7,9,6,4,56];
+
+        var ar1 = arr.map(function(ele, ind, ar) {
+            var res =  {
+                value: ele,
+                id: ind + 1
+            };
+            return res;
+        });
+
+        console.log(ar1);
+        console.log(arr);
+
+        var ar2 = arr.myMap(function(ele, ind, ar) {
+            var res =  {
+                value: ele,
+                id: ind + 1
+            };
+            return res;
+        });
+
+        console.log(ar2);
+
+        // var aa = arr.myMap('sagsdag');
+
+        // console.log(aa);
+
+        //// ========== reduce behind code =======
+
+        Array.prototype.myReduce = function(callBack, intitVal) {
+            if(typeof callBack !== 'function') {
+                throw(callBack + ' is not a function');
+            }
+
+            var val = (intitVal === undefined || intitVal === null || intitVal === '') ?  this[0] : intitVal;
+
+            let i = 0;
+            while(i < this.length) {
+                val = callBack(val, this[i], i, this);
+                i++;
+            }
+
+            return val;
+        }
+
+        var num = [1,2,8,4,9,7,5];
+
+
+        var total = num.reduce(function(x, ele, ind, ar){
+            return 'Test';
+        }, 0);
+        console.log(total);
+
+        var total2 = num.myReduce(function(x, ele, ind, ar){
+            return 'Test';
+        }, 0);
+
+        console.log(total2);
+
+        /// ==== pop behind code ===
+
+        Array.prototype.myPop = function() {
+            let lastVal = this[this.length - 1];
+            delete this[this.length - 1];
+
+            this.length = this.length - 1;
+            return lastVal;
+        };
+
+        var popArr = [5,8,7,9,6,4,5];
+        var d1 = popArr.pop();
+
+        console.log(popArr);
+        console.log(d1);
+
+        var popArr1 = [5,8,7,9,6,4,5];
+        //var d2 = popArr1.myPop();
+        popArr1.myPop();
+        popArr1.myPop();
+
+        console.log(popArr1);
+       // console.log(d2);
+
+    // ==== shift behind code =====
+
+
+    Array.prototype.myShift = function() {
+            let firstVal = this[0];
+            let i = 1;
+            while(i < this.length) {
+                this[i - 1] = this[i];
+                i++;
+            }
+            return firstVal;
+        };
+
+         var shiftArr1 = [5,8,7,9,6,4,5];
+         var s1 = shiftArr1.shift();
+         var s1 = shiftArr1.shift();
+         console.log(s1)
+         console.log(shiftArr1)
+
+         var shiftArr2 = [5,8,7,9,6,4,5];
+         var s2 = shiftArr2.shift();
+         var s2 = shiftArr2.shift();
+         console.log(s2)
+         console.log(shiftArr2)
+
+
+    </script>
+</body>
+</html>

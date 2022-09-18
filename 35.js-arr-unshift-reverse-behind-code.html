@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        Array.prototype.myUnshift = function(value) {
+            if(value === undefined) {
+                return this.length;
+            }
+            let i = 0;
+            let firstVal = this[0];
+            let nextVal;
+            let ind = this.length + 1;
+            while(i < ind) {
+                if(i === 0) {
+                    this[0] = value;
+                }else {
+                    nextVal = this[i];
+                    this[i] =  firstVal;
+                    firstVal = nextVal;
+                }
+                i++;
+            }
+
+            console.log('VAL',this.length)
+
+            return this.length;
+        };
+        var arr = [4,6,7,8,9,5,4];
+        var v = arr.unshift(120);
+
+        console.log(arr);
+        console.log(v);
+
+        var arr1 = [4,6,7,8,9,5,4];
+        var v1 = arr1.myUnshift(120);
+
+        console.log(arr1);
+        console.log(v1);
+    </script>
+</body>
+</html>
