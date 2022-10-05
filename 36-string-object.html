@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var str = 'Test here';
+        let str1 = str.substr(2, 6);
+
+        console.log(str);
+        console.log(str);
+        console.log(str1);
+
+        var aa = str.toUpperCase();
+        console.log(aa);
+
+        var txt1 = ' Some text here ';
+        var aa = txt1.trim();
+        var aa1 = txt1.trimEnd();
+        console.log(txt1);
+        console.log(aa);
+        console.log(aa1);
+
+        var txt2 = 'http://www.google.com';
+
+        var st1 = txt2.startsWith('https') ||  txt2.startsWith('http');
+
+        console.log(st1);
+
+        // === repalce ==
+
+        var txt3 = 'Some-Test-here';
+        var ts2 = txt3.replace(/[-]/g, '@@');
+
+        console.log(ts2);
+
+        var txt4 = 'Some text here';
+        var txt5 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        console.log(txt4.charAt(2));
+
+        console.log(txt5.charCodeAt(1));
+
+        console.log(String.fromCharCode(86))
+
+        
+    </script>
+</body>
+</html>
