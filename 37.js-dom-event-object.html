@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width:50px;
+            height: 50px;
+            background-color: bisque;
+            position: absolute;
+            left: 0;
+            top: 0px;
+            transition: all 0.3s ease-in-out;
+        }
+        .block-1 {
+            display: flex;
+            max-width: 700px;
+            margin: 0 auto;
+            height: 400px;
+            align-items: flex-end;
+        }
+        .block-1 div {
+            flex: 1 0 50%;
+        }
+        .tool-tip{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            background-color:black;
+            color: #fff;
+            padding: 10px;
+            display: none;
+        }
+        .tool-tip::before{
+            position: absolute;
+            content: "";
+            width: 10px;
+            height: 10px;
+            transform: rotate(-45deg);
+            background-color: #000;
+            border: 1px solid #000;
+            top: -5px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>Left: <span id="x-ele"></span></div>
+    <div>Top: <span id="y-ele"></span></div>
+
+    <div class="box"></div>
+    <div class="tool-tip"></div>
+    <button id="btn">
+        <span>Open</span> <em>Menu</em></e></button>
+    
+        <div class="block-1">
+            <div>
+                <span class="my-tooltip">SOme text here</span>
+            </div>
+            <div>
+                <span class="my-tooltip">SOme text here 2</span>
+            </div>
+        </div>
+    <script>
+        var btn = document.querySelector('#btn');
+        var xEle = document.querySelector('#x-ele');
+        var yEle = document.querySelector('#y-ele');
+        var box = document.querySelector('.box');
+        var toolBox = document.querySelector('.tool-tip');
+
+        
+        // document.onclick = function(obj) {
+        //     console.log(obj);
+        //     xEle.innerHTML = obj.clientX;
+        //     yEle.innerHTML = obj.clientY;
+        //     box.style.left = obj.clientX + 'px';
+        //     box.style.top = obj.clientY + 'px';
+        // }
+
+        btn.onclick = function(obj) {
+            console.log(obj.currentTarget); 
+            console.log(this); 
+            console.log(obj); 
+        }
+        // document.onmousedown = function(obj) {
+        //     console.log(obj); 
+        // }
+        // document.onmouseup = function(obj) {
+        //     console.log(obj); 
+        // }
+
+        var toltip = document.querySelectorAll('.my-tooltip');
+        console.log(toltip)
+        toltip.forEach(function(ele) {
+            ele.onmouseover = function(evt) {
+                console.log('hii',  this);
+                toolBox.innerHTML = this.innerHTML;
+                toolBox.style.display = 'block';
+                // toolBox.style.left = evt.clientX +'px';
+                // toolBox.style.top = evt.clientY +'px';
+
+
+                toolBox.style.left = this.offsetLeft +'px';
+                // toolBox.style.top = (this.offsetTop - toolBox.offsetHeight - 10) +'px';
+
+                toolBox.style.top = (this.offsetTop + this.offsetHeight + 10) +'px';
+            }
+
+            ele.onmouseout = function(evt) {
+                console.log('hii',  this);
+                toolBox.innerHTML = '';
+                toolBox.style.display = 'none';
+            }
+        })
+    </script>
+</body>
+</html>
