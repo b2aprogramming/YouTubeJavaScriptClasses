@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click me</button>
+    <button id="btn1" onclick="clickMe()">Click me 2</button>
+    <button id="btn2">Click me 3</button>
+    <script>
+
+        let btn = document.querySelector('#btn');
+        let btn2 = document.querySelector('#btn2');
+
+        btn.onclick = function() {
+            console.log('JHi');
+        }
+
+        function clickMe() {
+            console.log('hii click me');
+        }
+
+        btn2.addEventListener('click', function() {
+            console.log('hi listener');
+        })
+
+        // === Event phases are 3 types ====
+        /*
+            1. Capturing phase
+            2. Target phase
+            3. Bubling phase
+        */
+       
+
+
+    </script>
+</body>
+</html>

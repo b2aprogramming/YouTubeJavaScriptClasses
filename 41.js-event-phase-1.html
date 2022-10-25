@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="block">
+        <h1>
+            <p>Some test here</p>
+        </h1>
+    </div> -->
+    <div id="block">
+        <h1>
+            <p>Some test here</p>
+        </h1>
+    </div>
+    <div id="block-2">Block 2</div>
+
+    <script>
+        var allEle = document.querySelectorAll('body *');
+        var p = document.querySelector('p');
+        var block = document.querySelector('#block');
+        var block2 = document.querySelector('#block-2');
+
+
+        console.log(allEle);
+        // allEle.forEach(function(ele) {
+        //     ele.addEventListener('click', function() {
+        //         alert(ele.tagName);
+        //     }, true);
+        // })
+
+        p.addEventListener('click', function(evt) {
+                evt.myData = {
+                    name: 'I am from P tag',
+                    id: 1
+                };
+
+                console.log('pp==>',evt.myData2)
+        }, true);
+
+        block.addEventListener('click', function(evt) {
+          //  console.log('I am Block element', evt);
+            console.log('BLOCK====',evt.myData);
+            evt.myData2 = {
+                name: 'I am from Block tag',
+                id: 1
+            }
+        }, true);
+
+        block2.addEventListener('click', function(evt) {
+            console.log('I am Block element', evt);
+        });
+
+    </script>
+</body>
+</html>

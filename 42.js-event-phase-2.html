@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="block">
+        <h1>
+            <p>
+                <span>Some test here</span>
+            </p>
+        </h1>
+    </div>
+    <script>
+         var p = document.querySelector('p');
+        var block = document.querySelector('#block');
+        var spn = document.querySelector('span');
+
+        p.addEventListener('click', function(evt) {
+            console.log('P', evt);
+            
+        }, true);
+        spn.addEventListener('click', function(evt) {
+            console.log('SPAN', evt);
+            
+        }, true);
+
+        block.addEventListener('click', function(evt) {
+            console.log('Block');
+            evt.stopImmediatePropagation();
+        }, true);
+
+        block.addEventListener('click', function(evt) {
+           this.style.color="red";
+        }, true);
+    </script>
+</body>
+</html>
