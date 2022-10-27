@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="btn-add">Add event</button>
+        <button id="btn-remove">Remove Event</button>
+        <div id="box" >
+            some content here
+        </div>
+    </div>
+
+
+    <script>
+
+        let addBtn = document.querySelector('#btn-add');
+        let removeBtn = document.querySelector('#btn-remove');
+        let box = document.querySelector('#box');
+
+        function boxAlert() {
+            alert('Hello Box');
+        }
+        
+        box.addEventListener('click', boxAlert);
+
+        removeBtn.addEventListener('click', function() {
+            console.log('Hi Remove');
+            box.removeEventListener('click', boxAlert);
+        })
+
+        addBtn.addEventListener('click', function() {
+            console.log('Hi Add');
+            box.addEventListener('click', boxAlert);
+        });
+
+        
+
+
+    </script>
+</body>
+</html>

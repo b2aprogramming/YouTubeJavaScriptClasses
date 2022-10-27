@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btn">Insert Element</button>
+    <div id="box1">
+        <h1>Heelo H1 <span>x</span></h1>
+        <h2>Heelo H2 <span>x</span></h2>
+        <div>Hello div <span>x</span></div>
+        <p>Heelo P <span>x</span></p>
+    </div>
+    
+    <script>
+        var box = document.querySelector('#box1');
+        var btn = document.querySelector('#btn');
+
+        btn.addEventListener('click', function() {
+            var ele = document.createElement('h4');
+            ele.innerText = 'Hello h4'
+            box.insertBefore(ele, box.querySelector('p'))
+        });
+
+       
+        var allEle = box.querySelectorAll('span');
+        
+        allEle.forEach(function(ele) {
+            ele.addEventListener('click', function() {
+                let pEle = this.parentElement.parentElement;
+                console.log(pEle);
+                pEle.removeChild(this.parentElement)
+            });
+        });
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt">
+    <button id="btn" class="btn-1 btn-2" title="My Btn for add list" data-myid="test-id">Add to List</button>
+    <ul id="list-block">
+        
+    </ul>
+    <script>
+
+        var list = document.querySelector('#list-block');
+        var txt = document.querySelector('#txt');
+        var btn = document.querySelector('#btn');
+       // list.innerHTML = '<li>sometext</li>';
+
+       btn.addEventListener('click', function() {
+           console.dir(list);
+           //list.innerHTML += '<li>' +txt.value+ '</li>';
+          let ele = document.createElement('li');
+          ele.setAttribute('class', 'li-item');
+         
+          ele.setAttribute('id', 'id-' + (list.children.length + 1));
+          ele.setAttribute('style', 'color: red; background-color: blue');
+         // console.dir(ele);
+           ele.innerHTML = txt.value;
+          //ele.innerText = txt.value;
+          list.appendChild(ele);
+
+           txt.value = '';
+       });
+
+       console.dir(btn.getAttribute('id'))
+       console.dir(btn)
+       console.log(btn.attributes.getNamedItem('class').value)
+     //  btn.removeAttribute('class')
+
+    </script>
+</body>
+</html>
