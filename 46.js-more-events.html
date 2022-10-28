@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="txt">
+        <input type="number" id="txt">
+
+    </div>
+
+    <div>
+        <select>
+            <option>Some oiption</option>
+            <option>Some oiption</option>
+            <option>Some oiption</option>
+            <option>Some oiption</option>
+        </select>
+        
+    </div>
+
+    <div>
+        <textarea></textarea>
+        
+    </div>
+
+    <script>
+        var txt = document.querySelector('#txt');
+        var selectBox = document.querySelector('select');
+
+        console.dir(txt);
+        txt.addEventListener('focus', function(event) {
+            console.log(event);
+        });
+
+        txt.addEventListener('blur', function(event) {
+            console.log(event);
+           
+        });
+
+       
+        txt.addEventListener('keydown', function(event) {
+             console.log('KEYDOWN',event);
+            // console.log('KEYDOWN',this.value);
+            let key = event.keyCode || event.which || event.charCode;
+            if(
+                (key >=96 && key <= 105) || key === 8 || key === 13
+            ) {
+                return true;
+            }
+          //  event.preventDefault();
+            //event.stopImmediatePropagation();
+            return false
+        });
+
+        txt.addEventListener('paste', function(event) {
+             console.log('PASTE',event);
+            // console.log('KEYDOWN',this.value);
+            let key = event.keyCode || event.which || event.charCode;
+           
+           // event.preventDefault();
+            //event.stopImmediatePropagation();
+           // return false
+        });
+
+        txt.addEventListener('copy', function(event) {
+             console.log('COPY',event);
+           
+        });
+
+        txt.addEventListener('keyup', function(event) {
+            console.log('KEY up',event);
+            console.log('KEY up',this.value);
+        });
+       
+        txt.addEventListener('keypress', function(event) {
+            console.log('KEY PRESS',event);
+            console.log('KEY PRESS',this.value);
+        });
+
+        selectBox.addEventListener('change', function(event) {
+            console.log('CHANGE',event);
+        });
+
+        window.addEventListener('DOMContentLoaded', function() {
+            console.log('@@@ DOM content LOAD');
+        });
+        window.addEventListener('load', function() {
+            console.log('@@@ DOM LOAD');
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/icons.css" type="text/css" rel="stylesheet">
+    <script src="js/test.js"></script>
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            border: 1px solid #ccc;
+        }
+    </style>
+    <script>
+         window.addEventListener('DOMContentLoaded', function() {
+           // console.log('@@@ DOM content LOAD');
+           var box = document.querySelector('#box');
+           var img = document.querySelector('img');
+
+            console.log('@@@ BOX HEADER',box);
+            console.log('@@@ IMG WIDTH',img.offsetWidth);
+        });
+
+        window.addEventListener('load', function() {
+            console.log('@@@ DOM LOAD');
+        });
+
+        
+    </script>
+</head>
+<body>
+    <div id="box">
+        asgsagsad sag sag sadg asdg sadg sadg sadg sadg sadg sa
+        asgsagsad sag sag sadg asdg sadg sadg sadg sadg sadg sa
+        asgsagsad sag sag sadg asdg sadg sadg sadg sadg sadg sa
+        asgsagsad sag sag sadg asdg sadg sadg sadg sadg sadg sa
+        asgsagsad sag sag sadg asdg sadg sadg sadg sadg sadg sa
+        asgsagsad sag sag sadg asdg sadg sadg sadg sadg sadg sa
+        asgsagsad sag sag sadg asdg sadg sadg sadg sadg sadg sa
+    </div>
+    <div>
+        <img src="https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80">
+    </div>
+    <script>
+         window.addEventListener('DOMContentLoaded', function() {
+            console.log('@@@ DOM content LOAD');
+        });
+        window.addEventListener('load', function() {
+            console.log('@@@ DOM LOAD');
+        });
+        var box = document.querySelector('#box');
+
+        console.log('@@@ BOX BODY',box);
+
+        console.log(window.innerHeight)
+        console.log(window.innerWidth)
+
+        window.addEventListener('resize', function() {
+            console.log(this.innerHeight);
+            console.log(this.innerWidth);
+        });
+        
+    </script>
+</body>
+</html>
