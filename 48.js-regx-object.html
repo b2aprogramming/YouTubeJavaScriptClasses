@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Some tex there <br>ssgsdag sag</div>
+    <script>
+      
+         var str = '123@Some text here()[]!#$%'; 
+        // var str = '123'; 
+         //var str = new String('Some text here'); 
+         //var pat = new RegExp('[test]')
+        //var pat = /[here]/g; 
+        var pat = /[a-zA-Z0-9\s]/g;
+
+        var isVal = str.search(pat);
+        var patVal = str.match(pat);
+        console.log(isVal);
+        console.log(patVal);
+
+        console.log('==================');
+        var pat2 = /[^0-9]/gi;
+
+        var isVal1 = str.search(pat2);
+        var patVal1 = str.match(pat2);
+        console.log(isVal1);
+        console.log(patVal1);
+
+        if(isVal1 > -1) {
+            console.log('Text charectors are not allowed');
+        }
+
+        console.log('==================');
+
+        var str2 = 'UI Developer';
+        //var pat3 = /Developers | Designers/;
+        var pat3 = /[a-z]|[0-9]/g;
+        var isVal4 = str2.search(pat3);
+        var patVal4 = str2.match(pat3);
+
+        console.log(isVal4);
+        console.log(patVal4);
+
+        console.log('==================');
+
+        var str3 = 'UI Developer 100%#@^&*(){}[]';
+        //var pat3 = /Developers | Designers/;
+        var pat4 = /\S/g;
+        var isVal5 = str3.search(pat4);
+        var patVal5 = str3.match(pat4);
+
+        console.log(isVal5);
+        console.log(patVal5);
+        
+        let text = "HELLO,\tLOOK AT YOU HILOOK";
+        let pattern = /\BLO/g;
+
+        console.log(text.search(pattern));
+        console.log(text.match(pattern));
+
+        let text1 = "Visit W3Schools.\nLearn Javascript.";
+        let pattern1 = /\n/;
+        console.log(text1.search(pattern1));
+        console.log(text1.match(pattern1));
+
+
+    </script>
+</body>
+</html>
