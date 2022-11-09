@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var str = 'Some text here 123';
+        var pat = /\w+/g;
+
+        console.log(str.search(pat));
+        console.log(str.match(pat));
+
+        let text = "1 210020 or 1000 100test";
+        let pattern = /10*/g;
+
+        console.log(text.search(pattern));
+        console.log(text.match(pattern));
+
+
+        let text2 = "1 21002 or 11000 100test";
+        let pattern2 = /10?/g;
+
+        console.log(text2.search(pattern2));
+        console.log(text2.match(pattern2));
+
+
+        let text3 = "10 100 or 10000 2000 5000";
+        let pattern3 = /[0-9]{3,8}/g;
+
+        console.log(text3.search(pattern3));
+        console.log(text3.match(pattern3));
+
+        let text4 = "Hellow test 12345";
+        let pattern4 = /\d{3,}$/;
+
+        console.log(text4.search(pattern4));
+        console.log(text4.match(pattern4));
+
+
+        let text5 = "91 4521639781";
+        let pattern5 = /^\+/g;
+
+        console.log(text5.search(pattern5));
+        console.log(text5.match(pattern5));
+
+
+        let text6 = "is Bhagath all there is";
+        let pattern6 = /all(?= there)/g;
+
+        console.log(text6.search(pattern6));
+        console.log(text6.match(pattern6));
+
+
+        let text7 = "That is this all there this";
+        let pattern7 = /is(?! all)/gi;
+
+        console.log(text7.search(pattern7));
+        console.log(text7.match(pattern7));
+
+
+        let text8 = "This is test test 1256";
+        let pattern8 = /[0-9]/g;
+
+        console.log(text8.search(pattern8));
+        console.log(text8.match(pattern8));
+
+        console.log(pattern8.test(text8))
+
+
+
+
+    </script>
+</body>
+</html>
