@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="height: 200px">Some text here</h1>
+    <button>Click me</button>
+    <script>
+        console.log(window);
+        //alert('Hi');
+        console.log('Hi console');
+
+        function myFun() {
+            alert('Hi Fun');
+        }
+       // myFun();
+        console.log('Hi console 2');
+
+    var btn = document.querySelector('button');
+    btn.addEventListener('click', function() {
+        document.write('<h1>Bhagath Test</h1>');
+    });
+
+    // var isVal = confirm('Are you sure, you want to delete?');
+
+    // if(isVal) {
+    //     console.log('I am done');
+    // }else {
+    //     console.log('I am not done');
+    // }
+
+
+    //console.log('Hi confimrm', isVal);
+
+    /*let val = prompt('What is your name?')
+    console.log('Hi prompt', val);*/
+
+    var a = 10;
+    var b = 10;
+    let res = a + b;
+    
+
+    console.log(res);
+    console.log(isNaN(10));
+    
+    var ab = '100asgsagsad300';
+
+    console.log(parseInt(ab));
+
+    var h1 = document.querySelector('h1');
+    var h = parseInt(h1.style.height);
+    console.log(h)
+
+    var val2 = 20.582;
+
+    console.log(parseFloat(val2));
+
+
+    console.log(location)
+    console.log(navigator);
+    console.log(navigator);
+
+    var obj = {
+        name: 'Bhagath',
+        id: 2
+    };
+
+    console.log(obj);
+    console.log(JSON.stringify(obj));
+
+    var str = '{"name":"Bhagath","id":2}';
+
+    console.log(JSON.parse(str));
+
+
+    function AB() {
+        AB.instanceCount++;
+        this.name = 'AB name';
+        this.myName = AB.myVal;
+        this.getName = function() {
+
+        }
+    }
+
+    AB.prototype.setName= function() {
+        
+    }
+
+    AB.myVal = 'I am static val';
+    AB.instanceCount = 0;
+    AB.getMyVal =  function() {
+        console.dir(this.myVal);
+    }
+
+    var abF = new AB();
+    var abF1 = new AB();
+    var abF2 = new AB();
+    var abF3 = new AB();
+    var abF3 = new AB();
+    var abF3 = new AB();
+    var abF3 = new AB();
+    var abF3 = new AB();
+    var abF3 = new AB();
+    var abF3 = new AB();
+    var abF3 = new AB();
+    var abF3 = new AB();
+
+    console.dir(AB)
+    console.log(AB.myVal)
+    AB.getMyVal();
+    console.log(abF.myName)
+    console.log(AB.instanceCount)
+
+    console.log(Math.max(4,5,8,7))
+    console.log(Math.min(4,5,8,7));
+
+    var vv = 10.1;
+
+    console.log(Math.floor(vv));
+    console.log(Math.round(vv));
+    console.log(Math.ceil(vv));
+    console.log(Math.abs(-250));
+
+    Math.floor()
+
+
+   // var arr = [5,9,7,8,3,4,2,66,3,7,77]
+
+
+
+    
+
+    </script>
+</body>
+</html>
