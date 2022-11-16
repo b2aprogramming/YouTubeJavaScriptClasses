@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Hellow world</h2>
+    <script>
+        console.log(window)
+
+        var obj = {
+            name: 'asgsa',
+            getName: function() {
+                return this.name;
+            }
+        };
+
+        var obj2 = new Object();
+        obj2.name = 'Bhagath';
+        obj2.getName = function() {
+
+        };
+        console.log(obj);
+        console.log(obj2);
+
+        var h2 = document.querySelector('h2');
+
+        console.dir(h2);
+
+        /*
+            envumarable
+            configurable
+            writable
+        */
+
+        var myObj = {
+            name: 'Test name',
+            lname: 'L Name',
+            address: 'Some address'
+        };
+
+        /*Object.defineProperty(myObj, 'address', {
+            writable: false
+        });
+
+        Object.defineProperty(myObj, 'lname', {
+            configurable: false
+        });
+
+        Object.defineProperty(myObj, 'name', {
+            enumerable: false
+        });*/
+
+        // Object.defineProperties(myObj, {
+        //     'address': {
+        //         writable: false
+        //     },
+        //     'lname': {
+        //         configurable: false
+        //     },
+        //     'name': {
+        //         enumerable: false
+        //     }
+        // });
+
+        Object.freeze(myObj);
+
+        myObj.address = 'Bhagath';
+        delete myObj.lname;
+        console.log(myObj);
+        console.log(myObj.name);
+
+        // for(let i=0; 1i<0; i++) {
+
+        // }
+
+        for(let key in myObj) {
+            console.log(key);
+            console.log(myObj[key]);
+            console.log('==========');
+        }
+
+        console.log(myObj.name)
+        console.log(myObj['name'])
+
+       // console.log(JSON.stringify(myObj))
+
+       var myobj3 = {
+           name: 'NAME HERE',
+           address: 'My Address'
+       };
+
+       console.log(Object.getOwnPropertyDescriptor(myobj3, 'name'));
+
+       var myobj4 = {
+           lname: 'Lname HERE',
+           phone: 'My Phone',
+           details: {
+               leve1: 'Level 1',
+               leve2: 'Level 2',
+               obj: {
+                
+               }
+           }
+       };
+
+       var myobj5 = {
+           ab: 'Lname HERE',
+           cd: 'My Phone'
+       };
+
+       var oo = Object.assign({
+           address1:'Hyderabad',
+           phone: '845796'
+       }, myobj4, myobj5);
+      // var oo = myobj4;
+       oo.email = 'test@email.com';
+       oo.details.newProp = 'Bhagath prop';
+       console.log('myobj4',myobj4);
+       console.log('OO',oo);
+        
+
+    </script>
+</body>
+</html>
