@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            name: 'Obj 1',
+            lname: ' My l name',
+            address: 'My ADDRESS',
+            email: 'test@email.com',
+            myVal: undefined
+        };
+
+        Object.defineProperty(obj, 'name', {
+            enumerable: false
+        })
+
+        var keys = [];
+        for(let i in obj) {
+            keys.push(i)
+        }
+        console.log(keys)
+
+        var keys2 = Object.keys(obj);
+        console.log(keys2);
+        
+
+        Object.getKyes = function(obj1) {
+            let keys = [];
+            for(let i in obj1) {
+                keys.push(i)
+            }
+            return keys;
+        };
+
+        var keys3 = Object.getKyes(obj);
+        console.log(keys3);
+
+        var entr = Object.entries(obj);
+        console.log(entr);
+
+        var entrIes = [];
+        for(let x in obj) {
+            entrIes.push([x, obj[x]])
+        }
+
+        
+
+        console.log(entrIes);
+        console.log(Object.getOwnPropertyNames(obj));
+
+        console.log(obj.hasOwnProperty('name2'));
+
+        console.log(obj);
+        if(obj.hasOwnProperty('name')) {
+             console.log('Hi Name');
+        }
+
+        var obj2 = obj;
+
+    console.log(Object.is(1, 1));
+    console.log(obj == obj2);
+
+    var obj3 = {
+        name: 'obj 3'
+    };
+   // Object.preventExtensions(obj3);
+   //Object.freeze(obj3)
+   Object.seal(obj3)
+
+    obj3.lname = 'L name obj3';
+    console.log(obj3);
+console.log('Externsiable==',Object.isExtensible(obj3))
+
+
+
+    </script>
+</body>
+</html>
