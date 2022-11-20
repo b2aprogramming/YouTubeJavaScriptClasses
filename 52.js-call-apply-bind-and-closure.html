@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+    </ul>
+    
+    <button id="btn">Count</button>
+    <button id="btn2">Click me</button>
+
+    <script>
+        //==== closures ===
+
+        /* var a = 10;
+
+        function myfun () {
+            var b = 20;
+            console.log(a + b);
+
+            function abc() {
+                var c = 30;
+            }
+        }
+
+        myfun(); */
+
+        function ABC() {
+            var ab = 20;
+
+            function inner() {
+                console.log(ab)
+            }
+
+            inner();
+            console.dir(inner)
+        }
+
+        function ABC1(x) {
+            var ab = 20;
+           // return 20;
+            return function (y) {
+               // return x + y;
+               return function(z) {
+                return x + y + z;
+               }
+            }
+        }
+
+        ABC();
+
+        var val1 = ABC1(10)(30);
+        var res = val1(20);
+
+        console.dir(val1);
+
+
+        var btn = document.querySelector('#btn');
+
+        
+         
+        // btn.addEventListener('click', function() {
+        //     count++;
+        //     console.log(count);
+        // });
+
+        function increase() {
+            var count = 0;
+            return function() {
+                count++;
+                console.log(count);
+            }
+        }
+
+        var increaseCount = increase();
+        btn.addEventListener('click', increaseCount);
+
+        var ulList = document.querySelectorAll('ul li');
+
+        // ulList.forEach(function(ele, ind) {
+        //     ele.addEventListener('click', function() {
+        //         console.log(ind)
+        //     })
+        // })
+
+
+        function getCount(ind) {
+            return function() {
+                console.log(ind);
+            }
+        }
+
+        for(var i=0; i<ulList.length; i++) {
+            ulList[i].addEventListener('click',getCount(i))
+        }
+
+        /// =============== CALL =======
+
+        
+        var obj1 = {
+            name: 'This is Object 1',
+            setName: function(fName, lName) {
+                this.name = fName + ' ' + lName;
+            },
+            getName: function() {
+                return this.name;
+            }
+        };
+
+        var obj2 = {
+            name: 'This is Object 2'
+        };
+
+        var txt = obj1.getName.apply(obj2);
+        //obj1.setName.apply(obj2, ['Bhagath', 'Singh']);
+        //obj1.setName.call(obj2, 'Bhagath', 'Singh');
+
+        console.log('@@@ TTTT',txt);
+        console.log('@@@ TTTT',obj2);
+
+        var arr = [];
+        //var myData = [];
+
+        console.log(ulList);
+        [].push.apply(arr, ulList);
+        
+        // ulList.forEach(function(ele, ind) {
+        //     arr.push(ele);
+        // });
+
+         console.log(arr);
+         //console.log(myData);
+    
+         var num = [5,10,7,6,2,9,3];
+
+         console.log(Math.max(5,9,4,7,8))
+         var val2 = Math.min.apply(null,num);
+         console.log(val2);
+
+         var obj3 = {
+             name: 'oBJ 3',
+             getName: function() {
+                 return this.name;
+             }
+         };
+
+         var obj4 = {
+             name: 'Obj 4'
+         }
+
+         var getName = obj3.getName.bind(obj4);
+         console.log(getName());
+
+        
+         function ButtonTag() {
+             this.tabClick = function() {
+                console.log('hii', this.getName());
+             };
+
+             this.init = function() {
+                 var btn2 = document.querySelector('#btn2')
+                 btn2.addEventListener('click', this.tabClick.bind(this))
+             }
+             this.getName = function() {
+                return 'Hi Button'
+             }
+         }
+
+         var tab = new ButtonTag();
+         tab.init();
+
+
+
+
+       
+       
+    </script>
+</body>
+</html>
