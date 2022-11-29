@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0px;
+        }
+        .container {
+            margin: 0 auto;
+            padding-top: 15px;
+            max-width: 1024px;
+        }
+        .tabs {
+            border: 1px solid #ccc;
+        }
+        .tabs-menu {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            display: flex;
+        }
+        .tabs-menu li{
+            padding: 10px;
+            cursor: pointer;
+        }
+        .tabs-menu li.active{
+            border-bottom:3px solid #ccc;
+        }
+        .tabs-wrapper .tab-content {
+            padding: 15px;
+            display: none;
+        }
+        .tabs-wrapper .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs" id="tab-1">
+            <ul class="tabs-menu">
+                <li class="tab-item">Tab 1</li>
+                <li class="tab-item">Tab 2</li>
+                <li class="tab-item">Tab 3</li>
+            </ul>
+            <div class="tabs-wrapper">
+                <div class="tab-content">Tab 1</div>
+                <div class="tab-content">Tab 2</div>
+                <div class="tab-content">Tab 3</div>
+            </div>
+        </div>
+        <h1>Tab 2</h1>
+        <div class="tabs" id="tab-2">
+            <ul class="tabs-menu">
+                <li class="tab-item">Tab 1</li>
+                <li class="tab-item">Tab 2</li>
+                <li class="tab-item">Tab 3</li>
+            </ul>
+            <div class="tabs-wrapper">
+                <div class="tab-content">Tab 1</div>
+                <div class="tab-content">Tab 2</div>
+                <div class="tab-content">Tab 3</div>
+            </div>
+        </div>
+    </div>
+    <!--
+    <script>
+        var list = document.querySelectorAll('.tabs-menu li');
+        var tabContent = document.querySelectorAll('.tabs-wrapper .tab-content');
+        let currentIndex = 0;
+        let prevIndex = null;
+        tabContent[currentIndex].classList.add('active');
+        list.forEach(function(ele, ind) {
+            ele.addEventListener('click', function() {
+                prevIndex = currentIndex;
+                currentIndex = ind;
+                
+                // tabContent.forEach(function(tabC) {
+                //     tabC.classList.remove('active')
+                // });
+                if(prevIndex !== null) {
+                    tabContent[prevIndex].classList.remove('active');
+                    list[prevIndex].classList.remove('active');
+                }
+                tabContent[ind].classList.add('active');
+               //tabContent[ind].style.display = 'block';
+               ele.classList.add('active');
+            })
+        });
+
+
+    </script>
+-->
+    <script src="js/tabs.js"></script>
+    <script>
+        new Tabs({
+            tabsContainer: '#tab-1',
+            tabsMenus: '.tabs-menu',
+            tabsMenusList: 'li',
+            tabsContent: '.tab-content',
+            active: 1,
+        });
+
+        new Tabs({
+            tabsContainer: '#tab-2',
+            tabsMenus: '.tabs-menu',
+            tabsMenusList: 'li',
+            tabsContent: '.tab-content',
+            active: 2,
+        });
+    </script>
+</body>
+</html>
