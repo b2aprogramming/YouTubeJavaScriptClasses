@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0px;
+        }
+        .container {
+            margin: 0 auto;
+            padding-top: 15px;
+            max-width: 1024px;
+        }
+        .tabs {
+            border: 1px solid #ccc;
+        }
+        .tabs-menu {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            display: flex;
+        }
+        .tabs-menu li{
+            padding: 10px;
+            cursor: pointer;
+        }
+        .tabs-menu li.active{
+            border-bottom:3px solid #ccc;
+        }
+        .tabs-wrapper .tab-content {
+            padding: 15px;
+            display: none;
+        }
+        .tabs-wrapper .tab-content.active {
+            display: block;
+        }
+        .block-2 {
+        }
+        .block-2 > div {
+            width: 200px;
+            border: 1px solid #000;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs" id="tab-1">
+            <ul class="tabs-menu">
+                <li class="tab-item" data-tabid="#tab1-1">Tab 1</li>
+                <li class="tab-item" data-tabid="#tab1-2">Tab 2</li>
+                <li class="tab-item" data-tabid="#tab1-3">Tab 3</li>
+            </ul>
+            <div class="tabs-wrapper">
+                <div class="tab-content" id="tab1-2">1 Tab 2</div>
+                <div class="tab-content" id="tab1-1">1 Tab 1</div>
+                <div class="tab-content" id="tab1-3">1 Tab 3</div>
+            </div>
+        </div>
+        <h1>Tab 2</h1>
+        <div class="tabs" id="tab-2">
+            <ul class="tabs-menu">
+                <li class="tab-item" data-tabid="#tab1-1">Tab 1</li>
+                <li class="tab-item" data-tabid="#tab1-2">Tab 2</li>
+                <li class="tab-item" data-tabid="#tab1-3">Tab 3</li>
+            </ul>
+            <div class="tabs-wrapper">
+                <div class="tab-content" id="tab1-3">2 Tab 3</div>
+                <div class="tab-content" id="tab1-1">2 Tab 1</div>
+                <div class="tab-content" id="tab1-2">2 Tab 2</div>
+            </div>
+        </div>
+        <h1>Tab 3</h1>
+        <div class="tabs" id="tab-2">
+            <ul class="tabs-menu">
+                <li class="tab-item" data-tabid="#tab1-1">Tab 1</li>
+                <li class="tab-item" data-tabid="#tab1-2">Tab 2</li>
+                <li class="tab-item" data-tabid="#tab1-3">Tab 3</li>
+            </ul>
+            <div class="tabs-wrapper">
+                <div class="tab-content" id="tab1-3">3 Tab 3</div>
+                <div class="tab-content" id="tab1-1">3 Tab 1</div>
+                <div class="tab-content" id="tab1-2">3 Tab 2</div>
+            </div>
+        </div>
+
+        <div class="block-2">
+            <div class="box1">sadgsa</div>
+            <div class="box1">sadg</div>
+            <div class="box1">sadg sadgsa sadgsa sadgsa sadgsa sadgsa sadgsa sadgsa sadgsa</div>
+            <div class="box1">sadg</div>
+            
+
+        </div>
+    </div>
+   
+    <script src="js/tabs2.js"></script>
+    <script>
+       new Tabs({
+            tabsContainer: '#tab-1,#tab-2',
+            tabsMenus: '.tabs-menu',
+            tabsMenusList: 'li',
+            tabsContent: '.tab-content',
+            active: 0,
+        });
+
+        // ===== Tasks ==== 
+        /*
+         ============= TASK 1 ========
+            var arr = [5,6,9,7,4,8,88,99,100,420,3];
+
+            const res = getMinMax(arr);
+
+            console.log(res);
+            Output: 
+            
+            {
+                min: 3,
+                max: 420
+            }
+
+
+             ============= TASK 2 ========
+                 set div equal height
+        */
+    </script>
+</body>
+</html>
