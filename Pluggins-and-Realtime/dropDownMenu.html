@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;;
+            margin: 0px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding-top: 60px;
+        }
+        .dd-menu-block {
+            position: relative;
+        }
+        .dd-menu-trigger {
+            background-color: #091693;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        .dd-menu-trigger:hover {
+            background-color: #050e61;
+        }
+        .dd-menu {
+            position: absolute;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 6px;
+            padding: 10px;
+            min-width: 200px;
+            top:100%;
+            left: 0px;
+            display: none;
+        }
+        .dd-menu.open {
+            display: block;
+        }
+        .dd-menu ul{
+            list-style: none;
+        }
+        .dd-menu ul li{
+            padding: 5px 15px;
+        }
+        .nav {
+            padding: 30px;
+            background-color: #ccc;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="dd-menu-block">
+                <button class="dd-menu-trigger">Open Menu</button>
+                <div class="dd-menu">
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Contact</li>
+                        <li>Products</li>
+                        <li>Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="js/dropDownMenu.js"></script>
+    <script>
+        DropDowmMenu({
+            target: '.dd-menu-trigger',
+            menuContainer: '.dd-menu',
+            menuWrapper: '.dd-menu-block'
+        });
+    </script>
+</body>
+</html>
