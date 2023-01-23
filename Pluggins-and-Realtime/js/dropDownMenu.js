@@ -52,9 +52,15 @@ function DropDowmMenu(options) {
         }
     }
 
+    function resize() {
+        closeMenu();
+       // setPostion();
+    }
+
     function closeMenu() {
         menuContainer.classList.remove('open');
         document.removeEventListener('click', documentClick);
+        window.removeEventListener('resize', resize);
         isOpen = false;
     }
     function openMenu() {
@@ -64,38 +70,70 @@ function DropDowmMenu(options) {
        
        if(isOpen) {
         menuContainer.classList.add('open');
-        menuContainer.style.top = '0px';
+        
         setTimeout(function() {
             document.addEventListener('click', documentClick);
+            window.addEventListener('resize', resize);
         }, 300);
         
        } else {
         closeMenu();
        }
        if(opt.container === 'body') {
-        setPostion();
+        menuContainer.style.top = '0px';
        }
+       setPostion();
     }
 
-    function setPostion() {
-        console.dir(targetBtn)
+    function positionValues() {
         const pos = deepPostion(targetBtn);
         let wW = window.innerWidth;
         let wH = window.innerHeight;
         let pL = pos.left + menuContainer.offsetWidth;
-        console.log(pos);
+        let pT = pos.top + menuContainer.offsetHeight;
         let lPos = pos.left;
-        console.log(menuContainer.offsetWidth)
-        console.dir(menuContainer)
+        let tPos = pos.top + targetBtn.offsetHeight;
+        let menuLeftPos = false;
+        let menuTopPos = false;
         if(pL > wW) {
             lPos = (pos.left - menuContainer.offsetWidth) + targetBtn.offsetWidth;
+            menuLeftPos = true;
         }
-       // let btnPos = 
-       let topP = pos.top + targetBtn.offsetHeight;
-       menuContainer.style.top = topP + 'px';
-       menuContainer.style.left = lPos + 'px';
+
+        if(pT > wH) {
+            tPos = (pos.top - menuContainer.offsetHeight - targetBtn.offsetHeight) + targetBtn.offsetHeight;
+            menuTopPos = true;
+        }
+        return {
+            left: lPos,
+            top: tPos,
+            w: menuLeftPos,
+            h: menuTopPos
+        }
     }
+
+    function setPostion() {
+        const pos = positionValues();
+
+       if(opt.container === 'body') {
+        menuContainer.style.top = pos.top + 'px';
+        menuContainer.style.left = pos.left + 'px';
+       }else {
+        if(pos.w) {
+            menuContainer.style.left ='auto';
+            menuContainer.style.right ='0px';
+        }
+        if(pos.h) {
+            menuContainer.style.top ='auto';
+            menuContainer.style.bottom ='100%';
+        }
+       }
+
+       
+    }
+
     return {
-        closeMenu: closeMenu
+        close: closeMenu,
+        open: openMenu
     }
 }

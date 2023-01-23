@@ -19,6 +19,7 @@
         .dd-menu-block {
             position: relative;
             text-align: right;
+            display: inline-block;
         }
         .dd-menu-trigger {
             background-color: #091693;
@@ -41,6 +42,7 @@
             top:100%;
             left: 0px;
             display: none;
+            z-index: 999;
         }
         .dd-menu.open {
             display: block;
@@ -54,15 +56,43 @@
         .nav {
             padding: 30px;
             background-color: #ccc;
-            overflow: hidden;
+            /* overflow: hidden; */
             position: relative;
+            /* padding-top: 430px; */
+            text-align: right;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <div>
+            <button class="dd-menu-trigger" id="menu1">Open menu</button>
+            <select>
+                <option>asgsag 1</option>
+                <option>asgsag 2</option>
+                <option>asgsag 3</option>
+                <option>asgsag 4</option>
+                <option>asgsag 5</option>
+                <option>asgsag 6</option>
+            </select>
+        </div>
         <div class="nav">
             <div class="dd-menu-block">
+                <button class="dd-menu-trigger">Open Menu</button>
+                <div class="dd-menu">
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Contact</li>
+                        <li>Products</li>
+                        <li>Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav">
+            <div class="dd-menu-block" id="dd-menu-block">
                 <button class="dd-menu-trigger">Open Menu</button>
                 <div class="dd-menu">
                     <ul>
@@ -79,12 +109,24 @@
     </div>
     <script src="js/dropDownMenu.js"></script>
     <script>
-        DropDowmMenu({
+       const menu1 =  DropDowmMenu({
             target: '.dd-menu-trigger',
             menuContainer: '.dd-menu',
             menuWrapper: '.dd-menu-block',
             container: 'body'
         });
+
+      const menu2 =   DropDowmMenu({
+            target: '.dd-menu-trigger',
+            menuContainer: '.dd-menu',
+            menuWrapper: '#dd-menu-block',
+            container: 'body'
+        });
+
+        const btn1 = document.querySelector('#menu1');
+        btn1.addEventListener('click', function() {
+            menu1.open();
+        })
     </script>
 </body>
 </html>
