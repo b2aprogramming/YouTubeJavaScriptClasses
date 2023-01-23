@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 10;
+        var obj = {
+            name: 'my name'
+        };
+
+        obj.lname = 'Singh';
+
+        function myFun() {
+            console.log('hii');
+        }
+        myFun();
+        myFun();
+        myFun();
+        myFun();
+        myFun();
+        myFun();
+        myFun();
+
+        myFun.myName = 'Bhagath';
+        myFun.getMyName = function() {
+            console.log();
+        }
+
+        console.log(myFun.myName);
+
+        console.dir(myFun);
+        console.dir(window);
+    </script>
+</body>
+</html>

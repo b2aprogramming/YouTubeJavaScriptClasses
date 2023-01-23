@@ -18,6 +18,7 @@
         }
         .dd-menu-block {
             position: relative;
+            text-align: right;
         }
         .dd-menu-trigger {
             background-color: #091693;
@@ -54,6 +55,7 @@
             padding: 30px;
             background-color: #ccc;
             overflow: hidden;
+            position: relative;
         }
     </style>
 </head>
@@ -80,7 +82,8 @@
         DropDowmMenu({
             target: '.dd-menu-trigger',
             menuContainer: '.dd-menu',
-            menuWrapper: '.dd-menu-block'
+            menuWrapper: '.dd-menu-block',
+            container: 'body'
         });
     </script>
 </body>
