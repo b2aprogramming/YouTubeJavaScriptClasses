@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btn">Click me</button>
+    
+    <script>
+        // === arrow functions ====
+
+        function ab() {
+            this.name = "ab name"
+        };
+
+        // ab();
+        var aa = new ab();
+
+        var abc = () => {
+            console.log(this);
+        };
+
+       // var b = new abc();
+
+       // console.log(b);
+
+       function MyButton() {
+
+            var btn = document.querySelector('#btn');
+
+            btn.addEventListener('click', (evt) => {
+                console.log(evt);
+            });
+
+       };
+
+       var myBtn = new MyButton();
+
+    //    var sum = function(a, b) {
+    //     return a +b;
+    //    };
+
+    // var sum = (a, b) => {
+    //     return (a + b);
+    // };
+
+    var sum = (a, b) => ({name: 'hi'});
+    var sum2 = myName => {
+        var a = 10;
+        var b = 20;
+        return a + b + myName;
+    };
+
+       var t = sum(20,30);
+       console.log(t);
+
+       console.log(sum2('Bhagath name'));
+
+    
+    var arr = [2,6,78,9,4,5,82,1,96];
+
+//    var val  =  arr.filter((ele) => {
+//         return ele > 60;
+//     });
+
+    var val  =  arr.filter((ele, ind) => ele > 60);
+
+    console.log(val);
+
+// ========= spread operator ===
+// ... 3 dots
+
+var arr1 = [1,2,3,8,5];
+var arr2 = [5,97,6,38,9];
+var arr3 = arr1.concat(arr2);
+var arr4 = [...arr1,...arr2];
+
+console.log(arr3);
+console.log(arr4);
+
+var obj1 = {
+    name: 'Bhagath',
+    id: 1
+};
+
+var obj2 = {
+    address: 'Hyderabad'
+};
+
+var mapObj = Object.assign({}, obj1, obj2);
+var mapObj1 = {
+    ...obj1,
+    address: 'Bhagath address',
+    ...obj2,
+    mobile: '8425687'
+};
+
+console.log(mapObj);
+console.log(mapObj1);
+
+function muSum() {
+    console.log(arguments);
+    let tot = 0;
+    for(let i=0; i<arguments.length; i++) {
+        tot += arguments[i];
+    }
+    return tot;
+}
+
+var t1 = muSum(10,60,85,74,10);
+console.log(t1);
+
+function muSum2(...params) {
+    console.log(params);
+}
+
+var t2 = muSum2(10,60,85,74,10);
+console.log(t2);
+
+// ============ for of =====
+    let forArr = [5,9,7,9,86,4,5];
+    // forArr.forEach((ele, ind, ar) => {
+
+    // })
+    let ind = 0;
+    for(let x of forArr) {
+        console.log(x);
+        ind++;
+    }
+
+    // ===== new Map() ====
+    const map1 = new Map();
+
+    map1.set('a', 1);
+    map1.set('b', 2);
+    map1.set('c', 3);
+    console.log('==== MAP OBJECT ====');
+    console.log(map1);
+    console.log(map1.size);
+    console.log(map1.values());
+    console.log(map1.keys());
+    console.log(map1.get('c'));
+    console.log(map1.has('d'));
+
+    map1.forEach((value, key, map) => {
+        console.log(value, key, map)
+    });
+
+    function logMapElements(value, key, map) {
+        //console.log(`m[${key}] = ${value}`);
+        console.log(value, key);
+    }
+    console.log('==== MAP OBJECT 2====');
+    new Map([['foo', 3], ['bar', {}], ['baz', undefined]])
+    .forEach(logMapElements);
+
+    const map2 = new Map([
+        ['a', 2], 
+        ['b', 3],
+        ['c', 4]
+    ]);
+
+    // for(let z of map2) {
+    //     console.log(z[0], z[1]);
+    // }
+    for(let [key, val] of map2) {
+        console.log(key, val);
+    }
+    // === Destructuring  ===
+
+    var myObjects = {
+        name: 'Bhagath',
+        address: 'Hyderabad'
+    };
+    console.log(myObjects.name);
+
+    let {name, address } = myObjects;
+
+    console.log(name);
+    console.log(address);
+
+    const myArr = ['Apple', 'Orabge', 'Mango'];
+    const [, , ma] = myArr;
+
+    console.log(myArr[0]);
+    console.log(ma);
+
+    // function des(opt) {
+    //     console.log(opt.name);
+    //     console.log(opt.address);
+    // };
+    function des({name, address, phone}, [onem, two]) {
+        console.log(name);
+        console.log(address);
+        console.log(phone);
+        console.log(onem);
+        console.log(two);
+    };
+
+    des({
+        name: 'BHAGAT',
+        address: 'ADDRESS',
+        phone: '78555'
+    }, [1,2]);
+
+    // function add(a, b, c) {
+    //     if(c === undefined) {
+    //         c = 50;
+    //     }
+    //     return a + b + c;
+    // }
+    function add(a, b, c = 10) {
+        return a + b + c;
+    }
+
+    var ad1 = add(20,30);
+
+    console.log(ad1);
+
+    </script>
+</body>
+</html>

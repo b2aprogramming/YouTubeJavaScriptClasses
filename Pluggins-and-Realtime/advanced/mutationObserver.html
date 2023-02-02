@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MutationObserver</title>
+    <style>
+        ol {
+  border: 1px solid red;
+}
+
+    </style>
+</head>
+<body>
+    <!-- 
+Ported directly from the example in Jeff Griffith's article:
+https://hacks.mozilla.org/2012/05/dom-mutationobserver-reacting-to-dom-changes-without-killing-browser-performance/ 
+-->
+<button>Click me</button>
+<ul id="counts"></ul>
+<ol contenteditable>
+    <li>Press enter</li>
+  </ol>
+  
+  <script>
+    const targetNode = document.querySelector('ol');
+
+const config = {
+  attributes: true, 
+  childList: true, 
+  characterData: true
+};
+
+var btn = document.querySelector('button');
+var ul = document.querySelector('#counts');
+var count = 0;
+btn.addEventListener('click', function() {
+    count += 1;
+    ul.innerHTML += '<li>' + count+ '</li>';
+})
+  
+const callback = mutations => {  
+    console.log(mutations);
+  mutations.forEach(mutation => {
+    if (mutation.type === 'childList') {
+      const listValues = Array.from(targetNode.children)
+          .map(node => node.innerHTML)
+          .filter(html => html !== '<br>');
+      console.log(listValues);
+    }
+  });
+}
+const callback2 = mutations => {  
+    console.log('U;==',mutations);
+  mutations.forEach(mutation => {
+    if (mutation.type === 'childList') {
+      const listValues = Array.from(ul.children)
+          .map(node => node.innerHTML)
+          .filter(html => html !== '<br>');
+      console.log(listValues);
+    }
+  });
+}
+
+const observer = new MutationObserver(callback);
+
+observer.observe(targetNode, config);
+
+const observer2 = new MutationObserver(callback2);
+
+observer2.observe(ul, config);
+
+  </script>
+</body>
+</html>
