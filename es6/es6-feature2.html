@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // === Set ====
+
+        var set = new Set([1,2,5,1,2]);
+        set.add(6)
+        console.log(set);
+        console.log(set.has(67));
+
+        // for (const item of set) {
+        //     console.log(item);
+        // }
+        set.forEach((val, ind, arr) => {
+           console.log(val);
+            // console.log(ind);
+           // console.log(arr);
+        });
+        console.log(set);
+
+        let arr = [...set];
+        let arr2 = Array.from(set);
+
+        console.log(arr);
+        console.log(arr2);
+
+        var obj55 = {
+            name: 'sag',
+            address: 'sagsag',
+            details: {
+                mobile: '48',
+                email: 'sagsag',
+                obj: {
+                    
+                }
+            }
+        };
+
+        const aa = Object.assign({},obj55 );
+
+
+
+
+    </script>
+</body>
+</html>
