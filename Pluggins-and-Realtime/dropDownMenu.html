@@ -61,6 +61,17 @@
             /* padding-top: 430px; */
             text-align: right;
         }
+        .block-scroll {
+            height: 400px;
+            width: 400px;
+            overflow: auto;
+            border: 1px solid #ccc;
+        }
+        .inner-block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
@@ -105,6 +116,25 @@
                 </div>
             </div>
         </div>
+
+        <div class="block-scroll">
+            <div class="inner-block" style="height: 1500px; width: 1200px">
+                <div class="nav" style="background-color: #fff; ">
+                    <div class="dd-menu-block" id="dd-menu-block3">
+                        <button class="dd-menu-trigger">Open Menu</button>
+                        <div class="dd-menu">
+                            <ul>
+                                <li>Home</li>
+                                <li>About</li>
+                                <li>Contact</li>
+                                <li>Products</li>
+                                <li>Services</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
     </div>
     <script src="js/dropDownMenu.js"></script>
@@ -120,6 +150,12 @@
             target: '.dd-menu-trigger',
             menuContainer: '.dd-menu',
             menuWrapper: '#dd-menu-block',
+            container: 'body'
+        });
+      const menu3 =   DropDowmMenu({
+            target: '.dd-menu-trigger',
+            menuContainer: '.dd-menu',
+            menuWrapper: '#dd-menu-block3',
             container: 'body'
         });
 

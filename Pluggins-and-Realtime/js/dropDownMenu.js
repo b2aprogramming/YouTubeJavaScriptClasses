@@ -13,6 +13,25 @@ function deepPostion(ele) {
     }
 }
 
+function getScrollableParent (ele) {
+    var el = ele;
+
+    do {
+        let styles = window.getComputedStyle(el);
+        let scroll = styles.getPropertyValue('overflow');
+        let scrollx = styles.getPropertyValue('overflow-x');
+        let scrolly = styles.getPropertyValue('overflow-y');
+        
+        if(scroll === 'auto' || scrollx === 'auto' || scrolly === 'auto') {
+            return el;
+        }
+            
+        el = el.parentElement || el.parentNode;
+    } while (el !== null && el.nodeType === 1);
+    
+    return null;
+};
+
 function DropDowmMenu(options) {
     const defaults = {
         target: null,
@@ -26,6 +45,7 @@ function DropDowmMenu(options) {
         menuContainer,
         menuWrapper;
     let isOpen = false;
+    let scrollerElement = null;
 
     function init() {
         menuWrapper = document.querySelector(opt.menuWrapper);
@@ -40,9 +60,6 @@ function DropDowmMenu(options) {
         targetBtn.addEventListener('click', function() {
             openMenu();
         });
-
-        
-
     }
     init();
 
@@ -67,7 +84,7 @@ function DropDowmMenu(options) {
         isOpen = !isOpen;
         console.log('Hi menu', isOpen);
        // menuContainer.classList.add('open');
-       
+       initParentScroll();
        if(isOpen) {
         menuContainer.classList.add('open');
         
@@ -87,6 +104,11 @@ function DropDowmMenu(options) {
 
     function positionValues() {
         const pos = deepPostion(targetBtn);
+        let pElemtPos = scrollerElement || {
+            scrollLeft: 0,
+            scrollTop: 0
+          };
+
         let wW = window.innerWidth;
         let wH = window.innerHeight;
         let pL = pos.left + menuContainer.offsetWidth;
@@ -104,6 +126,8 @@ function DropDowmMenu(options) {
             tPos = (pos.top - menuContainer.offsetHeight - targetBtn.offsetHeight) + targetBtn.offsetHeight;
             menuTopPos = true;
         }
+        lPos -= pElemtPos.scrollLeft;
+        tPos -= pElemtPos.scrollTop;
         return {
             left: lPos,
             top: tPos,
@@ -113,8 +137,8 @@ function DropDowmMenu(options) {
     }
 
     function setPostion() {
+        
         const pos = positionValues();
-
        if(opt.container === 'body') {
         menuContainer.style.top = pos.top + 'px';
         menuContainer.style.left = pos.left + 'px';
@@ -128,9 +152,27 @@ function DropDowmMenu(options) {
             menuContainer.style.bottom ='100%';
         }
        }
-
-       
     }
+
+    function initParentScroll() {
+        scrollerElement = getScrollableParent(targetBtn);
+        if(scrollerElement) {
+          scrollerElement.addEventListener('scroll', parentScroll);
+        }
+      }
+  
+    function removeParentScroll() {
+        if(scrollerElement) {
+          scrollerElement.removeEventListener('scroll', parentScroll);
+        }
+      }
+  
+      
+  
+    function parentScroll() {
+        closeMenu();
+        removeParentScroll();
+      }
 
     return {
         close: closeMenu,

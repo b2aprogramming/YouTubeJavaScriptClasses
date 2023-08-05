@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function twoSum(nums, target_num) {  
+            var map = [];  
+            var indexnum = [];  
+
+            for (var x = 0; x < nums.length; x++)  
+            {  
+                if (map[nums[x]] != undefined)  
+                // what they meant by map[nums[x]]
+                {  
+                    //index = map[nums[x]];  
+                    indexnum[0] = nums[map[nums[x]]];
+                    indexnum[1] = nums[x];  
+                    break;  
+                }  
+                else  
+                {  
+                    map[target_num - nums[x]] = x;  
+                }  
+            }  
+            return indexnum;  
+        }  
+        function twoSum2(nums, target_num) {  
+            var map = {};  
+            var indexnum = [];  
+
+            for (var x = 0; x < nums.length; x++)  
+            {  
+                if (map[nums[x]] != undefined)  
+                // what they meant by map[nums[x]]
+                {  
+                    //index = map[nums[x]];  
+                    indexnum[0] = nums[map[nums[x]]];
+                    indexnum[1] = nums[x];  
+                    break;  
+                }  
+                else  
+                {  
+                    map[target_num - nums[x]] = x;  
+                }  
+            }  
+            return indexnum;  
+        }  
+        console.log(twoSum2([4,6,9,2,7,3,8],12));
+    </script>
+    
+</body>
+</html>
